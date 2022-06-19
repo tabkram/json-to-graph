@@ -1,0 +1,199 @@
+[
+  {
+    "data": {
+      "inputs": [],
+      "id": "start",
+      "label": "Start"
+    },
+    "group": "nodes"
+  },
+  {
+    "data": {
+      "id": "getCoreInfo",
+      "label": "2 - getCoreInfo",
+      "parent": "getExternalData1"
+    },
+    "group": "nodes"
+  },
+  {
+    "data": {
+      "id": "getLastInfo",
+      "label": "3 - getLastInfo",
+      "parent": "getExternalData1"
+    },
+    "group": "nodes"
+  },
+  {
+    "data": {
+      "id": "getCompany",
+      "label": "4 - getCompany",
+      "parent": "getExternalData1"
+    },
+    "group": "nodes"
+  },
+  {
+    "data": {
+      "id": "getExternalData1",
+      "label": "2 - getExternalData1",
+      "parent": "getExternalData"
+    },
+    "group": "nodes"
+  },
+  {
+    "data": {
+      "id": "getLossRatioInfo",
+      "label": "6 - getLossRatioInfo",
+      "parent": "getExternalData2"
+    },
+    "group": "nodes"
+  },
+  {
+    "data": {
+      "id": "getAdditionalInfo",
+      "label": "7 - getAdditionalInfo",
+      "parent": "getExternalData2"
+    },
+    "group": "nodes"
+  },
+  {
+    "data": {
+      "id": "getOtherData",
+      "label": "8 - getOtherData",
+      "parent": "getExternalData2"
+    },
+    "group": "nodes"
+  },
+  {
+    "data": {
+      "id": "getExternalData2",
+      "label": "6 - getExternalData2",
+      "parent": "getExternalData"
+    },
+    "group": "nodes"
+  },
+  {
+    "data": {
+      "inputs": [],
+      "outputs": {},
+      "startTime": "2022-06-10T21:11:49.791Z",
+      "endTime": "2022-06-10T21:11:50.374Z",
+      "id": "getExternalData",
+      "label": "getExternalData"
+    },
+    "group": "nodes"
+  },
+  {
+    "data": {
+      "inputs": [],
+      "outputs": {},
+      "startTime": "2022-06-10T21:11:52.798Z",
+      "endTime": "2022-06-10T21:11:52.822Z",
+      "id": "getDecisionParam1",
+      "label": "11 - getDecisionParam1",
+      "parent": "getDecisionParam"
+    },
+    "group": "nodes"
+  },
+  {
+    "data": {
+      "inputs": [],
+      "outputs": {},
+      "startTime": "2022-06-10T21:11:50.376Z",
+      "endTime": "2022-06-10T21:11:52.823Z",
+      "id": "getDecisionParam",
+      "label": "getDecisionParam"
+    },
+    "group": "nodes"
+  },
+  {
+    "data": {
+      "inputs": [],
+      "outputs": {},
+      "startTime": "2022-06-10T21:11:52.825Z",
+      "endTime": "2022-06-10T21:11:52.832Z",
+      "id": "decision1",
+      "label": "13 - decision1",
+      "parent": "calculateDecision"
+    },
+    "group": "nodes"
+  },
+  {
+    "data": {
+      "inputs": [],
+      "outputs": {},
+      "startTime": "2022-06-10T21:11:52.849Z",
+      "endTime": "2022-06-10T21:11:52.853Z",
+      "id": "decision2",
+      "label": "14 - decision2",
+      "parent": "calculateDecision"
+    },
+    "group": "nodes"
+  },
+  {
+    "data": {
+      "inputs": [],
+      "outputs": {},
+      "startTime": "2022-06-10T21:11:52.823Z",
+      "endTime": "2022-06-10T21:11:52.853Z",
+      "id": "calculateDecision",
+      "label": "calculateDecision"
+    },
+    "group": "nodes"
+  },
+  {
+    "data": {
+      "outputs": {},
+      "id": "Finish",
+      "label": "Finish"
+    },
+    "group": "nodes"
+  },
+  {
+    "data": {
+      "id": "getExternalData1->getExternalData2",
+      "source": "getExternalData1",
+      "target": "getExternalData2"
+    },
+    "group": "edges"
+  },
+  {
+    "data": {
+      "id": "start->getExternalData",
+      "source": "start",
+      "target": "getExternalData"
+    },
+    "group": "edges"
+  },
+  {
+    "data": {
+      "id": "getExternalData->getDecisionParam",
+      "source": "getExternalData",
+      "target": "getDecisionParam"
+    },
+    "group": "edges"
+  },
+  {
+    "data": {
+      "id": "decision1->decision2",
+      "source": "decision1",
+      "target": "decision2"
+    },
+    "group": "edges"
+  },
+  {
+    "data": {
+      "id": "getDecisionParam->calculateDecision",
+      "source": "getDecisionParam",
+      "target": "calculateDecision"
+    },
+    "group": "edges"
+  },
+  {
+    "data": {
+      "id": "calculateDecision->Finish",
+      "source": "calculateDecision",
+      "target": "Finish"
+    },
+    "group": "edges"
+  }
+]

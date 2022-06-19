@@ -1,0 +1,24 @@
+{
+  "name": "json-to-graph",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "browserify -t browserify-css src/app.js -o docs/app.bundle.js"
+  },
+  "keywords": [],
+  "author": "Akram TABKA",
+  "license": "ISC",
+  "dependencies": {
+    "browserify": "^17.0.0",
+    "cytoscape": "^3.21.1",
+    "cytoscape-elk": "^2.0.2",
+    "elkjs": "^0.7.1",
+    "jsoneditor": "^9.8.0",
+    "pretty-print-json": "^1.2.5",
+    "web-worker": "^1.2.0"
+  },
+  "devDependencies": {
+    "browserify-css": "^0.15.0"
+  }
+}
