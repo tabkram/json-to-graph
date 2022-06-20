@@ -1,8 +1,8 @@
 require('web-worker');
 require('elkjs');
 const elk = require('cytoscape-elk');
+const JSONEditor = require('jsoneditor');
 
-const {prettyPrintJson} = require("pretty-print-json");
 const cytoscape = require('cytoscape');
 
 class Graph {
@@ -23,7 +23,18 @@ class Graph {
 
     constructor(container, json, layout) {
         this.layout = layout ? layout : this.layout;
-        const elem = document.getElementById('json');
+        const jsonElement = document.getElementById('jsonViewerContainer');
+        const editor = new JSONEditor(jsonElement, {
+            mode: 'view',
+            modes: ['text', 'code', 'tree', 'form', 'view'],
+            onEditable: function (node) {
+                if (!node.path) {
+                    // In modes code and text, node is empty: no path, field, or value
+                    // returning false makes the text area read-only
+                    return false;
+                }
+            },
+        })
         cytoscape.use(elk);
         const cy = cytoscape({
             container: container,
@@ -63,8 +74,8 @@ class Graph {
             let item = e.target;
             console.log(item.data());
             const options = {indent: 3, linkUrls: true};
-
-            elem.innerHTML = prettyPrintJson.toHtml(item.data(), options);
+            editor.set(item.data());
+            // jsonElement.innerHTML = prettyPrintJson.toHtml(item.data(), options);
         });
         cy.minZoom(0.3);
         cy.maxZoom(2);
