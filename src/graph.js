@@ -25,8 +25,12 @@ class Graph {
         this.layout = layout ? layout : this.layout;
         const jsonElement = document.getElementById('jsonViewerContainer');
         const editor = new JSONEditor(jsonElement, {
-            mode: 'view',
+            mode: 'code',
             modes: ['text', 'code', 'tree', 'form', 'view'],
+            // search: false,
+            mainMenuBar: false,
+            navigationBar: false,
+            statusBar: false,
             onEditable: function (node) {
                 if (!node.path) {
                     // In modes code and text, node is empty: no path, field, or value
