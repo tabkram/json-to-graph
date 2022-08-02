@@ -42922,6 +42922,7 @@ class Graph {
             container: container,
             elements: json,
             layout: layout,
+            wheelSensitivity: 0.05,
             style: [
                 {
                     selector: 'node',
