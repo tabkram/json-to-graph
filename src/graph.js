@@ -96,6 +96,20 @@ class Graph {
         this.cy.json({elements: json});
         this.updateLayout();
     }
+
+    download() {
+        // var text = this.cy.jpg({full: true, 'output': 'blob'});
+        // var file = new Blob([text], { type: "image/png" });
+        // var a = document.getElementById(elementId);
+        // a.href = URL.createObjectURL(file);
+        // a.download = "test.png";
+        // document.getElementById(elementId);
+        const image  = document.querySelector('canvas[data-id="layer2-node"]').toDataURL();
+        const a = document.createElement('a');
+        a.href = image;
+        a.download = `trace_${new Date()}.png`;
+        a.click();
+    }
 }
 
 module.exports.Graph = Graph;

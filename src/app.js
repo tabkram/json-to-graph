@@ -39,6 +39,9 @@ document.addEventListener('DOMContentLoaded', function () {
             padding: 100
         });
     }
+    document.getElementById("downloadpng").onclick = () => {
+        graph.download();
+    };
 });
 
 function initJsonEditor(onValidate) {

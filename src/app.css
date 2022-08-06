@@ -4,6 +4,11 @@ ul li{
     display: inline;
 }
 
+ul {
+    padding: 0;
+    margin: 0.5em;
+}
+
 .btnStack {
     margin: 0 4px;
     background-color: #3883fa;
