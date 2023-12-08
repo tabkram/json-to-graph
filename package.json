@@ -1,19 +1,27 @@
 {
   "name": "json-to-graph",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.1.0",
+  "description": "Simplify your graph rendering with this online tool! Just feed it JSON objects and watch the magic happen",
   "main": "index.js",
   "scripts": {
     "build": "browserify -t browserify-css src/app.js -o docs/app.bundle.js"
   },
-  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tabkram/json-to-graph.git"
+  },
+  "keywords": [
+    "json",
+    "graph",
+    "visualization"
+  ],
   "author": "Akram TABKA",
   "license": "ISC",
   "dependencies": {
     "browserify": "^17.0.0",
-    "cytoscape": "^3.21.1",
-    "cytoscape-elk": "^2.0.2",
-    "elkjs": "^0.7.1",
+    "cytoscape": "^3.27.0",
+    "cytoscape-elk": "^2.2.0",
+    "elkjs": "^0.8.2",
     "jsoneditor": "^9.8.0",
     "web-worker": "^1.2.0"
   },
