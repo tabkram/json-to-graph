@@ -1,205 +1,4 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
-module.exports=[
-  {
-    "data": {
-      "inputs": [],
-      "id": "start",
-      "label": "Start"
-    },
-    "group": "nodes"
-  },
-  {
-    "data": {
-      "id": "getCoreInfo",
-      "label": "2 - getCoreInfo",
-      "parent": "getExternalData1"
-    },
-    "group": "nodes"
-  },
-  {
-    "data": {
-      "id": "getLastInfo",
-      "label": "3 - getLastInfo",
-      "parent": "getExternalData1"
-    },
-    "group": "nodes"
-  },
-  {
-    "data": {
-      "id": "getCompany",
-      "label": "4 - getCompany",
-      "parent": "getExternalData1"
-    },
-    "group": "nodes"
-  },
-  {
-    "data": {
-      "id": "getExternalData1",
-      "label": "2 - getExternalData1",
-      "parent": "getExternalData"
-    },
-    "group": "nodes"
-  },
-  {
-    "data": {
-      "id": "getLossRatioInfo",
-      "label": "6 - getLossRatioInfo",
-      "parent": "getExternalData2"
-    },
-    "group": "nodes"
-  },
-  {
-    "data": {
-      "id": "getAdditionalInfo",
-      "label": "7 - getAdditionalInfo",
-      "parent": "getExternalData2"
-    },
-    "group": "nodes"
-  },
-  {
-    "data": {
-      "id": "getOtherData",
-      "label": "8 - getOtherData",
-      "parent": "getExternalData2"
-    },
-    "group": "nodes"
-  },
-  {
-    "data": {
-      "id": "getExternalData2",
-      "label": "6 - getExternalData2",
-      "parent": "getExternalData"
-    },
-    "group": "nodes"
-  },
-  {
-    "data": {
-      "inputs": [],
-      "outputs": {},
-      "startTime": "2022-06-10T21:11:49.791Z",
-      "endTime": "2022-06-10T21:11:50.374Z",
-      "id": "getExternalData",
-      "label": "getExternalData"
-    },
-    "group": "nodes"
-  },
-  {
-    "data": {
-      "inputs": [],
-      "outputs": {},
-      "startTime": "2022-06-10T21:11:52.798Z",
-      "endTime": "2022-06-10T21:11:52.822Z",
-      "id": "getDecisionParam1",
-      "label": "11 - getDecisionParam1",
-      "parent": "getDecisionParam"
-    },
-    "group": "nodes"
-  },
-  {
-    "data": {
-      "inputs": [],
-      "outputs": {},
-      "startTime": "2022-06-10T21:11:50.376Z",
-      "endTime": "2022-06-10T21:11:52.823Z",
-      "id": "getDecisionParam",
-      "label": "getDecisionParam"
-    },
-    "group": "nodes"
-  },
-  {
-    "data": {
-      "inputs": [],
-      "outputs": {},
-      "startTime": "2022-06-10T21:11:52.825Z",
-      "endTime": "2022-06-10T21:11:52.832Z",
-      "id": "decision1",
-      "label": "13 - decision1",
-      "parent": "calculateDecision"
-    },
-    "group": "nodes"
-  },
-  {
-    "data": {
-      "inputs": [],
-      "outputs": {},
-      "startTime": "2022-06-10T21:11:52.849Z",
-      "endTime": "2022-06-10T21:11:52.853Z",
-      "id": "decision2",
-      "label": "14 - decision2",
-      "parent": "calculateDecision"
-    },
-    "group": "nodes"
-  },
-  {
-    "data": {
-      "inputs": [],
-      "outputs": {},
-      "startTime": "2022-06-10T21:11:52.823Z",
-      "endTime": "2022-06-10T21:11:52.853Z",
-      "id": "calculateDecision",
-      "label": "calculateDecision"
-    },
-    "group": "nodes"
-  },
-  {
-    "data": {
-      "outputs": {},
-      "id": "Finish",
-      "label": "Finish"
-    },
-    "group": "nodes"
-  },
-  {
-    "data": {
-      "id": "getExternalData1->getExternalData2",
-      "source": "getExternalData1",
-      "target": "getExternalData2"
-    },
-    "group": "edges"
-  },
-  {
-    "data": {
-      "id": "start->getExternalData",
-      "source": "start",
-      "target": "getExternalData"
-    },
-    "group": "edges"
-  },
-  {
-    "data": {
-      "id": "getExternalData->getDecisionParam",
-      "source": "getExternalData",
-      "target": "getDecisionParam"
-    },
-    "group": "edges"
-  },
-  {
-    "data": {
-      "id": "decision1->decision2",
-      "source": "decision1",
-      "target": "decision2"
-    },
-    "group": "edges"
-  },
-  {
-    "data": {
-      "id": "getDecisionParam->calculateDecision",
-      "source": "getDecisionParam",
-      "target": "calculateDecision"
-    },
-    "group": "edges"
-  },
-  {
-    "data": {
-      "id": "calculateDecision->Finish",
-      "source": "calculateDecision",
-      "target": "Finish"
-    },
-    "group": "edges"
-  }
-]
-
-},{}],2:[function(require,module,exports){
 'use strict';
 // For more information about browser field, check out the browser field at https://github.com/substack/browserify-handbook#browser-field.
 
@@ -276,7 +75,7 @@ module.exports = {
     }
 };
 
-},{}],3:[function(require,module,exports){
+},{}],2:[function(require,module,exports){
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
 		module.exports = factory(require("elkjs"));
@@ -633,7 +432,7 @@ __webpack_exports__ = __webpack_exports__["default"];
 /******/ })()
 ;
 });
-},{"elkjs":7}],4:[function(require,module,exports){
+},{"elkjs":6}],3:[function(require,module,exports){
 (function (setImmediate){(function (){
 /**
  * Copyright (c) 2016-2023, The Cytoscape Consortium.
@@ -29251,7 +29050,7 @@ cytoscape.stylesheet = cytoscape.Stylesheet = Stylesheet;
 module.exports = cytoscape;
 
 }).call(this)}).call(this,require("timers").setImmediate)
-},{"heap":8,"lodash/debounce":62,"lodash/get":64,"lodash/set":72,"lodash/toPath":74,"timers":77}],5:[function(require,module,exports){
+},{"heap":7,"lodash/debounce":61,"lodash/get":63,"lodash/set":71,"lodash/toPath":73,"timers":76}],4:[function(require,module,exports){
 (function (global){(function (){
 (function(f){if(typeof exports==="object"&&typeof module!=="undefined"){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}g.ELK = f()}})(function(){var define,module,exports;return (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 'use strict';
@@ -29479,7 +29278,7 @@ ELK.default = ELK;
 });
 
 }).call(this)}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./elk-api.js":5}],6:[function(require,module,exports){
+},{"./elk-api.js":4}],5:[function(require,module,exports){
 (function (global){(function (){
 'use strict';
 
@@ -35632,7 +35431,7 @@ var Jhe='object',Khe='boolean',Lhe='number',Mhe='string',Nhe='function',Ohe=2147
 gwtOnLoad(null, 'elk', null);
 
 }).call(this)}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],7:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 'use strict';
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -35700,10 +35499,10 @@ Object.defineProperty(module.exports, "__esModule", {
 });
 module.exports = ELKNode;
 ELKNode.default = ELKNode;
-},{"./elk-api.js":5,"./elk-worker.min.js":6,"web-worker":78}],8:[function(require,module,exports){
+},{"./elk-api.js":4,"./elk-worker.min.js":5,"web-worker":77}],7:[function(require,module,exports){
 module.exports = require('./lib/heap');
 
-},{"./lib/heap":9}],9:[function(require,module,exports){
+},{"./lib/heap":8}],8:[function(require,module,exports){
 // Generated by CoffeeScript 1.8.0
 (function() {
   var Heap, defaultCmp, floor, heapify, heappop, heappush, heappushpop, heapreplace, insort, min, nlargest, nsmallest, updateItem, _siftdown, _siftup;
@@ -36080,7 +35879,7 @@ module.exports = require('./lib/heap');
 
 }).call(this);
 
-},{}],10:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 /*!
  * jsoneditor.js
  *
@@ -36127,7 +35926,7 @@ overflow:"hidden"})});e.afterClose(function(){n.stylize({overflow:i})})}return d
 /** @license URI.js v4.4.1 (c) 2011 Gary Court. License: http://github.com/garycourt/uri-js */
 !function(e){"use strict";function he(){for(var e=arguments.length,t=Array(e),i=0;i<e;i++)t[i]=arguments[i];if(t.length>1){t[0]=t[0].slice(0,-1);var n=t.length-1;for(var r=1;r<n;++r)t[r]=t[r].slice(1,-1);t[n]=t[n].slice(1);return t.join("")}else return t[0]}function de(e){return"(?:"+e+")"}function n(e){return e===undefined?"undefined":e===null?"null":Object.prototype.toString.call(e).split(" ").pop().split("]").shift().toLowerCase()}function p(e){return e.toUpperCase()}function y(e){return e!==undefined&&e!==null?e instanceof Array?e:typeof e.length!=="number"||e.split||e.setInterval||e.call?[e]:Array.prototype.slice.call(e):[]}function x(e,t){var i=e;if(t)for(var n in t)i[n]=t[n];return i}function t(e){var t="[A-Za-z]",G="[\\x0D]",i="[0-9]",F="[\\x22]",n=he(i,"[A-Fa-f]"),H="[\\x0A]",P="[\\x20]",r=de(de("%[EFef]"+n+"%"+n+n+"%"+n+n)+"|"+de("%[89A-Fa-f]"+n+"%"+n+n)+"|"+de("%"+n+n)),o="[\\:\\/\\?\\#\\[\\]\\@]",s="[\\!\\$\\&\\'\\(\\)\\*\\+\\,\\;\\=]",a=he(o,s),l=e?"[\\xA0-\\u200D\\u2010-\\u2029\\u202F-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFEF]":"[]",c=e?"[\\uE000-\\uF8FF]":"[]",h=he(t,i,"[\\-\\.\\_\\~]",l),d=de(t+he(t,i,"[\\+\\-\\.]")+"*"),u=de(de(r+"|"+he(h,s,"[\\:]"))+"*"),V=de(de("25[0-5]")+"|"+de("2[0-4]"+i)+"|"+de("1"+i+i)+"|"+de("[1-9]"+i)+"|"+i),g=de(de("25[0-5]")+"|"+de("2[0-4]"+i)+"|"+de("1"+i+i)+"|"+de("0?[1-9]"+i)+"|0?0?"+i),p=de(g+"\\."+g+"\\."+g+"\\."+g),m=de(n+"{1,4}"),f=de(de(m+"\\:"+m)+"|"+p),C=de(de(m+"\\:")+"{6}"+f),I=de("\\:\\:"+de(m+"\\:")+"{5}"+f),v=de(de(m)+"?\\:\\:"+de(m+"\\:")+"{4}"+f),Z=de(de(de(m+"\\:")+"{0,1}"+m)+"?\\:\\:"+de(m+"\\:")+"{3}"+f),M=de(de(de(m+"\\:")+"{0,2}"+m)+"?\\:\\:"+de(m+"\\:")+"{2}"+f),O=de(de(de(m+"\\:")+"{0,3}"+m)+"?\\:\\:"+m+"\\:"+f),D=de(de(de(m+"\\:")+"{0,4}"+m)+"?\\:\\:"+f),K=de(de(de(m+"\\:")+"{0,5}"+m)+"?\\:\\:"+m),j=de(de(de(m+"\\:")+"{0,6}"+m)+"?\\:\\:"),A=de([C,I,v,Z,M,O,D,K,j].join("|")),y=de(de(h+"|"+r)+"+"),z=de(A+"\\%25"+y),X=de(A+de("\\%25|\\%(?!"+n+"{2})")+y),J=de("[vV]"+n+"+\\."+he(h,s,"[\\:]")+"+"),Y=de("\\["+de(X+"|"+A+"|"+J)+"\\]"),b=de(de(r+"|"+he(h,s))+"*"),w=de(Y+"|"+p+"(?!"+b+")"+"|"+b),S=de(i+"*"),x=de(de(u+"@")+"?"+w+de("\\:"+S)+"?"),k=de(r+"|"+he(h,s,"[\\:\\@]")),U=de(k+"*"),E=de(k+"+"),Q=de(de(r+"|"+he(h,s,"[\\@]"))+"+"),R=de(de("\\/"+U)+"*"),T=de("\\/"+de(E+R)+"?"),_=de(Q+R),$=de(E+R),L="(?!"+k+")",q=de(R+"|"+T+"|"+_+"|"+$+"|"+L),B=de(de(k+"|"+he("[\\/\\?]",c))+"*"),W=de(de(k+"|[\\/\\?]")+"*"),N=de(de("\\/\\/"+x+R)+"|"+T+"|"+$+"|"+L),ee=de(d+"\\:"+N+de("\\?"+B)+"?"+de("\\#"+W)+"?"),te=de(de("\\/\\/"+x+R)+"|"+T+"|"+_+"|"+L),ie=de(te+de("\\?"+B)+"?"+de("\\#"+W)+"?"),ne=de(ee+"|"+ie),re=de(d+"\\:"+N+de("\\?"+B)+"?"),oe="^("+d+")\\:"+de(de("\\/\\/("+de("("+u+")@")+"?("+w+")"+de("\\:("+S+")")+"?)")+"?("+R+"|"+T+"|"+$+"|"+L+")")+de("\\?("+B+")")+"?"+de("\\#("+W+")")+"?$",se="^(){0}"+de(de("\\/\\/("+de("("+u+")@")+"?("+w+")"+de("\\:("+S+")")+"?)")+"?("+R+"|"+T+"|"+_+"|"+L+")")+de("\\?("+B+")")+"?"+de("\\#("+W+")")+"?$",ae="^("+d+")\\:"+de(de("\\/\\/("+de("("+u+")@")+"?("+w+")"+de("\\:("+S+")")+"?)")+"?("+R+"|"+T+"|"+$+"|"+L+")")+de("\\?("+B+")")+"?$",le="^"+de("\\#("+W+")")+"?$",ce="^"+de("("+u+")@")+"?("+w+")"+de("\\:("+S+")")+"?$";return{NOT_SCHEME:new RegExp(he("[^]",t,i,"[\\+\\-\\.]"),"g"),NOT_USERINFO:new RegExp(he("[^\\%\\:]",h,s),"g"),NOT_HOST:new RegExp(he("[^\\%\\[\\]\\:]",h,s),"g"),NOT_PATH:new RegExp(he("[^\\%\\/\\:\\@]",h,s),"g"),NOT_PATH_NOSCHEME:new RegExp(he("[^\\%\\/\\@]",h,s),"g"),NOT_QUERY:new RegExp(he("[^\\%]",h,s,"[\\:\\@\\/\\?]",c),"g"),NOT_FRAGMENT:new RegExp(he("[^\\%]",h,s,"[\\:\\@\\/\\?]"),"g"),ESCAPE:new RegExp(he("[^]",h,s),"g"),UNRESERVED:new RegExp(h,"g"),OTHER_CHARS:new RegExp(he("[^\\%]",h,a),"g"),PCT_ENCODED:new RegExp(r,"g"),IPV4ADDRESS:new RegExp("^("+p+")$"),IPV6ADDRESS:new RegExp("^\\[?("+A+")"+de(de("\\%25|\\%(?!"+n+"{2})")+"("+y+")")+"?\\]?$")}}var a=t(false),l=t(true),b=function(){function i(e,t){var i=[];var n=true;var r=false;var o=undefined;try{for(var s=e[Symbol.iterator](),a;!(n=(a=s.next()).done);n=true){i.push(a.value);if(t&&i.length===t)break}}catch(e){r=true;o=e}finally{try{if(!n&&s["return"])s["return"]()}finally{if(r)throw o}}return i}return function(e,t){if(Array.isArray(e))return e;else if(Symbol.iterator in Object(e))return i(e,t);else throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),k=function(e){if(Array.isArray(e)){for(var t=0,i=Array(e.length);t<e.length;t++)i[t]=e[t];return i}else return Array.from(e)},W=2147483647,N=36,G=1,F=26,E=38,R=700,H=72,P=128,V="-",T=/^xn--/,_=/[^\0-\x7E]/,$=/[\x2E\u3002\uFF0E\uFF61]/g,L={overflow:"Overflow: input needs wider integers to process","not-basic":"Illegal input >= 0x80 (not a basic code point)","invalid-input":"Invalid input"},o=N-G,Z=Math.floor,M=String.fromCharCode;function O(e){throw new RangeError(L[e])}function B(e,t){var i=[];var n=e.length;while(n--)i[n]=t(e[n]);return i}function D(e,t){var i=e.split("@");var n="";if(i.length>1){n=i[0]+"@";e=i[1]}e=e.replace($,".");var r=e.split(".");var o=B(r,t).join(".");return n+o}function K(e){var t=[];var i=0;var n=e.length;while(i<n){var r=e.charCodeAt(i++);if(r>=55296&&r<=56319&&i<n){var o=e.charCodeAt(i++);if((o&64512)==56320)t.push(((r&1023)<<10)+(o&1023)+65536);else{t.push(r);i--}}else t.push(r)}return t}var j,z=function e(t){if(t-48<10)return t-22;if(t-65<26)return t-65;if(t-97<26)return t-97;return N},X=function e(t,i){return t+22+75*(t<26)-((i!=0)<<5)},J=function e(t,i,n){var r=0;t=n?Z(t/R):t>>1;t+=Z(t/i);for(;t>o*F>>1;r+=N)t=Z(t/o);return Z(r+(o+1)*t/(t+E))},Y=function e(t){var i=[];var n=t.length;var r=0;var o=P;var s=H;var a=t.lastIndexOf(V);if(a<0)a=0;for(var l=0;l<a;++l){if(t.charCodeAt(l)>=128)O("not-basic");i.push(t.charCodeAt(l))}for(var c=a>0?a+1:0;c<n;){var h=r;for(var d=1,u=N;;u+=N){if(c>=n)O("invalid-input");var g=z(t.charCodeAt(c++));if(g>=N||g>Z((W-r)/d))O("overflow");r+=g*d;var p=u<=s?G:u>=s+F?F:u-s;if(g<p)break;var m=N-p;if(d>Z(W/m))O("overflow");d*=m}var f=i.length+1;s=J(r-h,f,h==0);if(Z(r/f)>W-o)O("overflow");o+=Z(r/f);r%=f;i.splice(r++,0,o)}return String.fromCodePoint.apply(String,i)},U=function e(t){var i=[];t=K(t);var n=t.length;var r=P;var o=0;var s=H;var a=true;var l=false;var c=undefined;try{for(var h=t[Symbol.iterator](),d;!(a=(d=h.next()).done);a=true){var u=d.value;if(u<128)i.push(M(u))}}catch(e){l=true;c=e}finally{try{if(!a&&h.return)h.return()}finally{if(l)throw c}}var g=i.length;var p=g;if(g)i.push(V);while(p<n){var m=W;var f=true;var C=false;var I=undefined;try{for(var v=t[Symbol.iterator](),A;!(f=(A=v.next()).done);f=true){var y=A.value;if(y>=r&&y<m)m=y}}catch(e){C=true;I=e}finally{try{if(!f&&v.return)v.return()}finally{if(C)throw I}}var b=p+1;if(m-r>Z((W-o)/b))O("overflow");o+=(m-r)*b;r=m;var w=true;var S=false;var x=undefined;try{for(var k=t[Symbol.iterator](),E;!(w=(E=k.next()).done);w=true){var R=E.value;if(R<r&&++o>W)O("overflow");if(R==r){var T=o;for(var _=N;;_+=N){var $=_<=s?G:_>=s+F?F:_-s;if(T<$)break;var L=T-$;var B=N-$;i.push(M(X($+L%B,0)));T=Z(L/B)}i.push(M(X(T,0)));s=J(o,b,p==g);o=0;++p}}}catch(e){S=true;x=e}finally{try{if(!w&&k.return)k.return()}finally{if(S)throw x}}++o;++r}return i.join("")},Q,q,C={version:"2.1.0",ucs2:{decode:K,encode:function e(t){return String.fromCodePoint.apply(String,k(t))}},decode:Y,encode:U,toASCII:function e(t){return D(t,function(e){return _.test(e)?"xn--"+U(e):e})},toUnicode:function e(t){return D(t,function(e){return T.test(e)?Y(e.slice(4).toLowerCase()):e})}},h={};function m(e){var t=e.charCodeAt(0);var i=void 0;if(t<16)i="%0"+t.toString(16).toUpperCase();else if(t<128)i="%"+t.toString(16).toUpperCase();else if(t<2048)i="%"+(t>>6|192).toString(16).toUpperCase()+"%"+(t&63|128).toString(16).toUpperCase();else i="%"+(t>>12|224).toString(16).toUpperCase()+"%"+(t>>6&63|128).toString(16).toUpperCase()+"%"+(t&63|128).toString(16).toUpperCase();return i}function c(e){var t="";var i=0;var n=e.length;while(i<n){var r=parseInt(e.substr(i+1,2),16);if(r<128){t+=String.fromCharCode(r);i+=3}else if(r>=194&&r<224){if(n-i>=6){var o=parseInt(e.substr(i+4,2),16);t+=String.fromCharCode((r&31)<<6|o&63)}else t+=e.substr(i,6);i+=6}else if(r>=224){if(n-i>=9){var s=parseInt(e.substr(i+4,2),16);var a=parseInt(e.substr(i+7,2),16);t+=String.fromCharCode((r&15)<<12|(s&63)<<6|a&63)}else t+=e.substr(i,9);i+=9}else{t+=e.substr(i,3);i+=3}}return t}function d(e,i){function t(e){var t=c(e);return!t.match(i.UNRESERVED)?e:t}if(e.scheme)e.scheme=String(e.scheme).replace(i.PCT_ENCODED,t).toLowerCase().replace(i.NOT_SCHEME,"");if(e.userinfo!==undefined)e.userinfo=String(e.userinfo).replace(i.PCT_ENCODED,t).replace(i.NOT_USERINFO,m).replace(i.PCT_ENCODED,p);if(e.host!==undefined)e.host=String(e.host).replace(i.PCT_ENCODED,t).toLowerCase().replace(i.NOT_HOST,m).replace(i.PCT_ENCODED,p);if(e.path!==undefined)e.path=String(e.path).replace(i.PCT_ENCODED,t).replace(e.scheme?i.NOT_PATH:i.NOT_PATH_NOSCHEME,m).replace(i.PCT_ENCODED,p);if(e.query!==undefined)e.query=String(e.query).replace(i.PCT_ENCODED,t).replace(i.NOT_QUERY,m).replace(i.PCT_ENCODED,p);if(e.fragment!==undefined)e.fragment=String(e.fragment).replace(i.PCT_ENCODED,t).replace(i.NOT_FRAGMENT,m).replace(i.PCT_ENCODED,p);return e}function w(e){return e.replace(/^0*(.*)/,"$1")||"0"}function S(e,t){var i=e.match(t.IPV4ADDRESS)||[];var n=b(i,2),r=n[1];if(r)return r.split(".").map(w).join(".");else return e}function ee(e,t){var i=e.match(t.IPV6ADDRESS)||[];var n=b(i,3),r=n[1],o=n[2];if(r){var s=r.toLowerCase().split("::").reverse(),a=b(s,2),l=a[0],c=a[1];var h=c?c.split(":").map(w):[];var d=l.split(":").map(w);var u=t.IPV4ADDRESS.test(d[d.length-1]);var g=u?7:8;var p=d.length-g;var m=Array(g);for(var f=0;f<g;++f)m[f]=h[f]||d[p+f]||"";if(u)m[g-1]=S(m[g-1],t);var C=m.reduce(function(e,t,i){if(!t||t==="0"){var n=e[e.length-1];if(n&&n.index+n.length===i)n.length++;else e.push({index:i,length:1})}return e},[]);var I=C.sort(function(e,t){return t.length-e.length})[0];var v=void 0;if(I&&I.length>1){var A=m.slice(0,I.index);var y=m.slice(I.index+I.length);v=A.join(":")+"::"+y.join(":")}else v=m.join(":");if(o)v+="%"+o;return v}else return e}var te=/^(?:([^:\/?#]+):)?(?:\/\/((?:([^\/?#@]*)@)?(\[[^\/?#\]]+\]|[^\/?#:]*)(?:\:(\d*))?))?([^?#]*)(?:\?([^#]*))?(?:#((?:.|\n|\r)*))?/i,ie="".match(/(){0}/)[1]===undefined;function s(e){var t=arguments.length>1&&arguments[1]!==undefined?arguments[1]:{};var i={};var n=t.iri!==false?l:a;if(t.reference==="suffix")e=(t.scheme?t.scheme+":":"")+"//"+e;var r=e.match(te);if(r){if(ie){i.scheme=r[1];i.userinfo=r[3];i.host=r[4];i.port=parseInt(r[5],10);i.path=r[6]||"";i.query=r[7];i.fragment=r[8];if(isNaN(i.port))i.port=r[5]}else{i.scheme=r[1]||undefined;i.userinfo=e.indexOf("@")!==-1?r[3]:undefined;i.host=e.indexOf("//")!==-1?r[4]:undefined;i.port=parseInt(r[5],10);i.path=r[6]||"";i.query=e.indexOf("?")!==-1?r[7]:undefined;i.fragment=e.indexOf("#")!==-1?r[8]:undefined;if(isNaN(i.port))i.port=e.match(/\/\/(?:.|\n)*\:(?:\/|\?|\#|$)/)?r[4]:undefined}if(i.host)i.host=ee(S(i.host,n),n);if(i.scheme===undefined&&i.userinfo===undefined&&i.host===undefined&&i.port===undefined&&!i.path&&i.query===undefined)i.reference="same-document";else if(i.scheme===undefined)i.reference="relative";else if(i.fragment===undefined)i.reference="absolute";else i.reference="uri";if(t.reference&&t.reference!=="suffix"&&t.reference!==i.reference)i.error=i.error||"URI is not a "+t.reference+" reference.";var o=h[(t.scheme||i.scheme||"").toLowerCase()];if(!t.unicodeSupport&&(!o||!o.unicodeSupport)){if(i.host&&(t.domainHost||o&&o.domainHost))try{i.host=C.toASCII(i.host.replace(n.PCT_ENCODED,c).toLowerCase())}catch(e){i.error=i.error||"Host's domain name can not be converted to ASCII via punycode: "+e}d(i,a)}else d(i,n);if(o&&o.parse)o.parse(i,t)}else i.error=i.error||"URI can not be parsed.";return i}function ne(e,t){var i=t.iri!==false?l:a;var n=[];if(e.userinfo!==undefined){n.push(e.userinfo);n.push("@")}if(e.host!==undefined)n.push(ee(S(String(e.host),i),i).replace(i.IPV6ADDRESS,function(e,t,i){return"["+t+(i?"%25"+i:"")+"]"}));if(typeof e.port==="number"||typeof e.port==="string"){n.push(":");n.push(String(e.port))}return n.length?n.join(""):undefined}var re=/^\.\.?\//,oe=/^\/\.(\/|$)/,se=/^\/\.\.(\/|$)/,ae=/^\/?(?:.|\n)*?(?=\/|$)/;function u(e){var t=[];while(e.length)if(e.match(re))e=e.replace(re,"");else if(e.match(oe))e=e.replace(oe,"/");else if(e.match(se)){e=e.replace(se,"/");t.pop()}else if(e==="."||e==="..")e="";else{var i=e.match(ae);if(i){var n=i[0];e=e.slice(n.length);t.push(n)}else throw new Error("Unexpected dot segment condition")}return t.join("")}function g(t){var i=arguments.length>1&&arguments[1]!==undefined?arguments[1]:{};var e=i.iri?l:a;var n=[];var r=h[(i.scheme||t.scheme||"").toLowerCase()];if(r&&r.serialize)r.serialize(t,i);if(t.host)if(e.IPV6ADDRESS.test(t.host));else if(i.domainHost||r&&r.domainHost)try{t.host=!i.iri?C.toASCII(t.host.replace(e.PCT_ENCODED,c).toLowerCase()):C.toUnicode(t.host)}catch(e){t.error=t.error||"Host's domain name can not be converted to "+(!i.iri?"ASCII":"Unicode")+" via punycode: "+e}d(t,e);if(i.reference!=="suffix"&&t.scheme){n.push(t.scheme);n.push(":")}var o=ne(t,i);if(o!==undefined){if(i.reference!=="suffix")n.push("//");n.push(o);if(t.path&&t.path.charAt(0)!=="/")n.push("/")}if(t.path!==undefined){var s=t.path;if(!i.absolutePath&&(!r||!r.absolutePath))s=u(s);if(o===undefined)s=s.replace(/^\/\//,"/%2F");n.push(s)}if(t.query!==undefined){n.push("?");n.push(t.query)}if(t.fragment!==undefined){n.push("#");n.push(t.fragment)}return n.join("")}function le(e,t){var i=arguments.length>2&&arguments[2]!==undefined?arguments[2]:{};var n=arguments[3];var r={};if(!n){e=s(g(e,i),i);t=s(g(t,i),i)}i=i||{};if(!i.tolerant&&t.scheme){r.scheme=t.scheme;r.userinfo=t.userinfo;r.host=t.host;r.port=t.port;r.path=u(t.path||"");r.query=t.query}else{if(t.userinfo!==undefined||t.host!==undefined||t.port!==undefined){r.userinfo=t.userinfo;r.host=t.host;r.port=t.port;r.path=u(t.path||"");r.query=t.query}else{if(!t.path){r.path=e.path;if(t.query!==undefined)r.query=t.query;else r.query=e.query}else{if(t.path.charAt(0)==="/")r.path=u(t.path);else{if((e.userinfo!==undefined||e.host!==undefined||e.port!==undefined)&&!e.path)r.path="/"+t.path;else if(!e.path)r.path=t.path;else r.path=e.path.slice(0,e.path.lastIndexOf("/")+1)+t.path;r.path=u(r.path)}r.query=t.query}r.userinfo=e.userinfo;r.host=e.host;r.port=e.port}r.scheme=e.scheme}r.fragment=t.fragment;return r}function ce(e,t,i){var n=x({scheme:"null"},i);return g(le(s(e,n),s(t,n),n,true),n)}function ue(e,t){if(typeof e==="string")e=g(s(e,t),t);else if(n(e)==="object")e=s(g(e,t),t);return e}function ge(e,t,i){if(typeof e==="string")e=g(s(e,i),i);else if(n(e)==="object")e=g(e,i);if(typeof t==="string")t=g(s(t,i),i);else if(n(t)==="object")t=g(t,i);return e===t}function pe(e,t){return e&&e.toString().replace(!t||!t.iri?a.ESCAPE:l.ESCAPE,m)}function I(e,t){return e&&e.toString().replace(!t||!t.iri?a.PCT_ENCODED:l.PCT_ENCODED,c)}var i={scheme:"http",domainHost:true,parse:function e(t,i){if(!t.host)t.error=t.error||"HTTP URIs must have a host.";return t},serialize:function e(t,i){var n=String(t.scheme).toLowerCase()==="https";if(t.port===(n?443:80)||t.port==="")t.port=undefined;if(!t.path)t.path="/";return t}},me={scheme:"https",domainHost:i.domainHost,parse:i.parse,serialize:i.serialize};function fe(e){return typeof e.secure==="boolean"?e.secure:String(e.scheme).toLowerCase()==="wss"}var r={scheme:"ws",domainHost:true,parse:function e(t,i){var n=t;n.secure=fe(n);n.resourceName=(n.path||"/")+(n.query?"?"+n.query:"");n.path=undefined;n.query=undefined;return n},serialize:function e(t,i){if(t.port===(fe(t)?443:80)||t.port==="")t.port=undefined;if(typeof t.secure==="boolean"){t.scheme=t.secure?"wss":"ws";t.secure=undefined}if(t.resourceName){var n=t.resourceName.split("?"),r=b(n,2),o=r[0],s=r[1];t.path=o&&o!=="/"?o:undefined;t.query=s;t.resourceName=undefined}t.fragment=undefined;return t}},Ce={scheme:"wss",domainHost:r.domainHost,parse:r.parse,serialize:r.serialize},Ie={},ve,Ae="[A-Za-z0-9\\-\\.\\_\\~"+(true?"\\xA0-\\u200D\\u2010-\\u2029\\u202F-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFEF":"")+"]",f="[0-9A-Fa-f]",ye=de(de("%[EFef]"+f+"%"+f+f+"%"+f+f)+"|"+de("%[89A-Fa-f]"+f+"%"+f+f)+"|"+de("%"+f+f)),be="[A-Za-z0-9\\!\\$\\%\\'\\*\\+\\-\\^\\_\\`\\{\\|\\}\\~]",we,Se=he("[\\!\\$\\%\\'\\(\\)\\*\\+\\,\\-\\.0-9\\<\\>A-Z\\x5E-\\x7E]",'[\\"\\\\]'),xe="[\\!\\$\\'\\(\\)\\*\\+\\,\\;\\:\\@]",ke=new RegExp(Ae,"g"),v=new RegExp(ye,"g"),Ee=new RegExp(he("[^]",be,"[\\.]",'[\\"]',Se),"g"),Re=new RegExp(he("[^]",Ae,xe),"g"),Te=Re;function A(e){var t=c(e);return!t.match(ke)?e:t}var _e={scheme:"mailto",parse:function e(t,i){var n=t;var r=n.to=n.path?n.path.split(","):[];n.path=undefined;if(n.query){var o=false;var s={};var a=n.query.split("&");for(var l=0,c=a.length;l<c;++l){var h=a[l].split("=");switch(h[0]){case"to":var d=h[1].split(",");for(var u=0,g=d.length;u<g;++u)r.push(d[u]);break;case"subject":n.subject=I(h[1],i);break;case"body":n.body=I(h[1],i);break;default:o=true;s[I(h[0],i)]=I(h[1],i);break}}if(o)n.headers=s}n.query=undefined;for(var p=0,m=r.length;p<m;++p){var f=r[p].split("@");f[0]=I(f[0]);if(!i.unicodeSupport)try{f[1]=C.toASCII(I(f[1],i).toLowerCase())}catch(e){n.error=n.error||"Email address's domain name can not be converted to ASCII via punycode: "+e}else f[1]=I(f[1],i).toLowerCase();r[p]=f.join("@")}return n},serialize:function e(t,i){var n=t;var r=y(t.to);if(r){for(var o=0,s=r.length;o<s;++o){var a=String(r[o]);var l=a.lastIndexOf("@");var c=a.slice(0,l).replace(v,A).replace(v,p).replace(Ee,m);var h=a.slice(l+1);try{h=!i.iri?C.toASCII(I(h,i).toLowerCase()):C.toUnicode(h)}catch(e){n.error=n.error||"Email address's domain name can not be converted to "+(!i.iri?"ASCII":"Unicode")+" via punycode: "+e}r[o]=c+"@"+h}n.path=r.join(",")}var d=t.headers=t.headers||{};if(t.subject)d["subject"]=t.subject;if(t.body)d["body"]=t.body;var u=[];for(var g in d)if(d[g]!==Ie[g])u.push(g.replace(v,A).replace(v,p).replace(Re,m)+"="+d[g].replace(v,A).replace(v,p).replace(Te,m));if(u.length)n.query=u.join("&");return n}},$e=/^([^\:]+)\:(.*)/,Le={scheme:"urn",parse:function e(t,i){var n=t.path&&t.path.match($e);var r=t;if(n){var o=i.scheme||r.scheme||"urn";var s=n[1].toLowerCase();var a=n[2];var l=o+":"+(i.nid||s);var c=h[l];r.nid=s;r.nss=a;r.path=undefined;if(c)r=c.parse(r,i)}else r.error=r.error||"URN can not be parsed.";return r},serialize:function e(t,i){var n=i.scheme||t.scheme||"urn";var r=t.nid;var o=n+":"+(i.nid||r);var s=h[o];if(s)t=s.serialize(t,i);var a=t;var l=t.nss;a.path=(r||i.nid)+":"+l;return a}},Be=/^[0-9A-Fa-f]{8}(?:\-[0-9A-Fa-f]{4}){3}\-[0-9A-Fa-f]{12}$/,We={scheme:"urn:uuid",parse:function e(t,i){var n=t;n.uuid=n.nss;n.nss=undefined;if(!i.tolerant&&(!n.uuid||!n.uuid.match(Be)))n.error=n.error||"UUID is not valid.";return n},serialize:function e(t,i){var n=t;n.nss=(t.uuid||"").toLowerCase();return n}};h[i.scheme]=i,h[me.scheme]=me,h[r.scheme]=r,h[Ce.scheme]=Ce,h[_e.scheme]=_e,h[Le.scheme]=Le,h[We.scheme]=We,e.SCHEMES=h,e.pctEncChar=m,e.pctDecChars=c,e.parse=s,e.removeDotSegments=u,e.serialize=g,e.resolveComponents=le,e.resolve=ce,e.normalize=ue,e.equal=ge,e.escapeComponent=pe,e.unescapeComponent=I,Object.defineProperty(e,"__esModule",{value:true})}(t)},4049:function(e){e.exports=function(){"use strict";var s=function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")},e=function(){function n(e,t){for(var i=0;i<t.length;i++){var n=t[i];n.enumerable=n.enumerable||false;n.configurable=true;if("value"in n)n.writable=true;Object.defineProperty(e,n.key,n)}}return function(e,t,i){if(t)n(e.prototype,t);if(i)n(e,i);return e}}(),m=function(){function i(e,t){var i=[];var n=true;var r=false;var o=undefined;try{for(var s=e[Symbol.iterator](),a;!(n=(a=s.next()).done);n=true){i.push(a.value);if(t&&i.length===t)break}}catch(e){r=true;o=e}finally{try{if(!n&&s["return"])s["return"]()}finally{if(r)throw o}}return i}return function(e,t){if(Array.isArray(e))return e;else if(Symbol.iterator in Object(e))return i(e,t);else throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),r=(String.prototype.startsWith=String.prototype.startsWith||function(e){return this.indexOf(e)===0},String.prototype.padStart=String.prototype.padStart||function(e,t){var i=this;while(i.length<e)i=t+i;return i},{cb:"0f8ff",tqw:"aebd7",q:"-ffff",qmrn:"7fffd4",zr:"0ffff",bg:"5f5dc",bsq:"e4c4",bck:"---",nch:"ebcd",b:"--ff",bvt:"8a2be2",brwn:"a52a2a",brw:"deb887",ctb:"5f9ea0",hrt:"7fff-",chcT:"d2691e",cr:"7f50",rnw:"6495ed",crns:"8dc",crms:"dc143c",cn:"-ffff",Db:"--8b",Dcn:"-8b8b",Dgnr:"b8860b",Dgr:"a9a9a9",Dgrn:"-64-",Dkhk:"bdb76b",Dmgn:"8b-8b",Dvgr:"556b2f",Drng:"8c-",Drch:"9932cc",Dr:"8b--",Dsmn:"e9967a",Dsgr:"8fbc8f",DsTb:"483d8b",DsTg:"2f4f4f",Dtrq:"-ced1",Dvt:"94-d3",ppnk:"1493",pskb:"-bfff",mgr:"696969",grb:"1e90ff",rbrc:"b22222",rwht:"af0",stg:"228b22",chs:"-ff",gnsb:"dcdcdc",st:"8f8ff",g:"d7-",gnr:"daa520",gr:"808080",grn:"-8-0",grnw:"adff2f",hnw:"0fff0",htpn:"69b4",nnr:"cd5c5c",ng:"4b-82",vr:"0",khk:"0e68c",vnr:"e6e6fa",nrb:"0f5",wngr:"7cfc-",mnch:"acd",Lb:"add8e6",Lcr:"08080",Lcn:"e0ffff",Lgnr:"afad2",Lgr:"d3d3d3",Lgrn:"90ee90",Lpnk:"b6c1",Lsmn:"a07a",Lsgr:"20b2aa",Lskb:"87cefa",LsTg:"778899",Lstb:"b0c4de",Lw:"e0",m:"-ff-",mgrn:"32cd32",nn:"af0e6",mgnt:"-ff",mrn:"8--0",mqm:"66cdaa",mmb:"--cd",mmrc:"ba55d3",mmpr:"9370db",msg:"3cb371",mmsT:"7b68ee","":"-fa9a",mtr:"48d1cc",mmvt:"c71585",mnLb:"191970",ntc:"5fffa",mstr:"e4e1",mccs:"e4b5",vjw:"dead",nv:"--80",c:"df5e6",v:"808-0",vrb:"6b8e23",rng:"a5-",rngr:"45-",rch:"da70d6",pgnr:"eee8aa",pgrn:"98fb98",ptrq:"afeeee",pvtr:"db7093",ppwh:"efd5",pchp:"dab9",pr:"cd853f",pnk:"c0cb",pm:"dda0dd",pwrb:"b0e0e6",prp:"8-080",cc:"663399",r:"--",sbr:"bc8f8f",rb:"4169e1",sbrw:"8b4513",smn:"a8072",nbr:"4a460",sgrn:"2e8b57",ssh:"5ee",snn:"a0522d",svr:"c0c0c0",skb:"87ceeb",sTb:"6a5acd",sTgr:"708090",snw:"afa",n:"-ff7f",stb:"4682b4",tn:"d2b48c",t:"-8080",thst:"d8bfd8",tmT:"6347",trqs:"40e0d0",vt:"ee82ee",whT:"5deb3",wht:"",hts:"5f5f5",w:"-",wgrn:"9acd32"});function a(e){var t=arguments.length>1&&arguments[1]!==undefined?arguments[1]:1;var i=t>0?e.toFixed(t).replace(/0+$/,"").replace(/\.$/,""):e.toString();return i||"0"}var o=function(){function p(e,t,i,n){s(this,p);var g=this;function r(e){if(e.startsWith("hsl")){var t=e.match(/([\-\d\.e]+)/g).map(Number),i=m(t,4),n=i[0],r=i[1],o=i[2],s=i[3];if(s===undefined)s=1;n/=360;r/=100;o/=100;g.hsla=[n,r,o,s]}else if(e.startsWith("rgb")){var a=e.match(/([\-\d\.e]+)/g).map(Number),l=m(a,4),c=l[0],h=l[1],d=l[2],u=l[3];if(u===undefined)u=1;g.rgba=[c,h,d,u]}else if(e.startsWith("#"))g.rgba=p.hexToRgb(e);else g.rgba=p.nameToRgb(e)||p.hexToRgb(e)}if(e===undefined);else if(Array.isArray(e))this.rgba=e;else if(i===undefined){var o=e&&""+e;if(o)r(o.toLowerCase())}else this.rgba=[e,t,i,n===undefined?1:n]}e(p,[{key:"printRGB",value:function e(t){var i=t?this.rgba:this.rgba.slice(0,3),n=i.map(function(e,t){return a(e,t===3?3:0)});return t?"rgba("+n+")":"rgb("+n+")"}},{key:"printHSL",value:function e(t){var i=[360,100,100,1],n=["","%","%",""];var r=t?this.hsla:this.hsla.slice(0,3),o=r.map(function(e,t){return a(e*i[t],t===3?3:1)+n[t]});return t?"hsla("+o+")":"hsl("+o+")"}},{key:"printHex",value:function e(t){var i=this.hex;return t?i:i.substring(0,7)}},{key:"rgba",get:function e(){if(this._rgba)return this._rgba;if(!this._hsla)throw new Error("No color is set");return this._rgba=p.hslToRgb(this._hsla)},set:function e(t){if(t.length===3)t[3]=1;this._rgba=t;this._hsla=null}},{key:"rgbString",get:function e(){return this.printRGB()}},{key:"rgbaString",get:function e(){return this.printRGB(true)}},{key:"hsla",get:function e(){if(this._hsla)return this._hsla;if(!this._rgba)throw new Error("No color is set");return this._hsla=p.rgbToHsl(this._rgba)},set:function e(t){if(t.length===3)t[3]=1;this._hsla=t;this._rgba=null}},{key:"hslString",get:function e(){return this.printHSL()}},{key:"hslaString",get:function e(){return this.printHSL(true)}},{key:"hex",get:function e(){var t=this.rgba,i=t.map(function(e,t){return t<3?e.toString(16):Math.round(e*255).toString(16)});return"#"+i.map(function(e){return e.padStart(2,"0")}).join("")},set:function e(t){this.rgba=p.hexToRgb(t)}}],[{key:"hexToRgb",value:function e(t){var i=(t.startsWith("#")?t.slice(1):t).replace(/^(\w{3})$/,"$1F").replace(/^(\w)(\w)(\w)(\w)$/,"$1$1$2$2$3$3$4$4").replace(/^(\w{6})$/,"$1FF");if(!i.match(/^([0-9a-fA-F]{8})$/))throw new Error("Unknown hex color; "+t);var n=i.match(/^(\w\w)(\w\w)(\w\w)(\w\w)$/).slice(1).map(function(e){return parseInt(e,16)});n[3]=n[3]/255;return n}},{key:"nameToRgb",value:function e(t){var i=t.toLowerCase().replace("at","T").replace(/[aeiouyldf]/g,"").replace("ght","L").replace("rk","D").slice(-5,4),n=r[i];return n===undefined?n:p.hexToRgb(n.replace(/\-/g,"00").padStart(6,"f"))}},{key:"rgbToHsl",value:function e(t){var i=m(t,4),n=i[0],r=i[1],o=i[2],s=i[3];n/=255;r/=255;o/=255;var a=Math.max(n,r,o),l=Math.min(n,r,o);var c=void 0,h=void 0,d=(a+l)/2;if(a===l)c=h=0;else{var u=a-l;h=d>.5?u/(2-a-l):u/(a+l);switch(a){case n:c=(r-o)/u+(r<o?6:0);break;case r:c=(o-n)/u+2;break;case o:c=(n-r)/u+4;break}c/=6}return[c,h,d,s]}},{key:"hslToRgb",value:function e(t){var i=m(t,4),n=i[0],r=i[1],o=i[2],s=i[3];var a=void 0,l=void 0,c=void 0;if(r===0)a=l=c=o;else{var h=function e(t,i,n){if(n<0)n+=1;if(n>1)n-=1;if(n<1/6)return t+(i-t)*6*n;if(n<1/2)return i;if(n<2/3)return t+(i-t)*(2/3-n)*6;return t};var d=o<.5?o*(1+r):o+r-o*r,u=2*o-d;a=h(u,d,n+1/3);l=h(u,d,n);c=h(u,d,n-1/3)}var g=[a*255,l*255,c*255].map(Math.round);g[3]=s;return g}}]);return p}(),i=function(){function o(){s(this,o);this._events=[]}e(o,[{key:"add",value:function e(t,i,n){t.addEventListener(i,n,false);this._events.push({target:t,type:i,handler:n})}},{key:"remove",value:function e(i,n,r){this._events=this._events.filter(function(e){var t=true;if(i&&i!==e.target)t=false;if(n&&n!==e.type)t=false;if(r&&r!==e.handler)t=false;if(t)o._doRemove(e.target,e.type,e.handler);return!t})}},{key:"destroy",value:function e(){this._events.forEach(function(e){return o._doRemove(e.target,e.type,e.handler)});this._events=[]}}],[{key:"_doRemove",value:function e(t,i,n){t.removeEventListener(i,n,false)}}]);return o}();function l(e){var t=document.createElement("div");t.innerHTML=e;return t.firstElementChild}function c(e,h,d){var u=false;function g(e,t,i){return Math.max(t,Math.min(e,i))}function n(e,t,i){if(i)u=true;if(!u)return;e.preventDefault();var n=h.getBoundingClientRect(),r=n.width,o=n.height,s=t.clientX,a=t.clientY;var l=g(s-n.left,0,r),c=g(a-n.top,0,o);d(l/r,c/o)}function t(e,t){var i=e.buttons===undefined?e.which:e.buttons;if(i===1)n(e,e,t);else u=false}function i(e,t){if(e.touches.length===1)n(e,e.touches[0],t);else u=false}e.add(h,"mousedown",function(e){t(e,true)});e.add(h,"touchstart",function(e){i(e,true)});e.add(window,"mousemove",t);e.add(h,"touchmove",i);e.add(window,"mouseup",function(e){u=false});e.add(h,"touchend",function(e){u=false});e.add(h,"touchcancel",function(e){u=false})}var y="linear-gradient(45deg, lightgrey 25%, transparent 25%, transparent 75%, lightgrey 75%) 0 0 / 2em 2em,\n                   linear-gradient(45deg, lightgrey 25%,       white 25%,       white 75%, lightgrey 75%) 1em 1em / 2em 2em",b=360,h="keydown",d="mousedown",u="focusin";function w(e,t){return(t||document).querySelector(e)}function g(e){e.preventDefault();e.stopPropagation()}function p(e,t,i,n,r){e.add(t,h,function(e){if(i.indexOf(e.key)>=0){if(r)g(e);n(e)}})}var t=function(){function t(e){s(this,t);this.settings={popup:"right",layout:"default",alpha:true,editor:true,editorFormat:"hex",cancelButton:false,defaultColor:"#0cf"};this._events=new i;this.onChange=null;this.onDone=null;this.onOpen=null;this.onClose=null;this.setOptions(e)}e(t,[{key:"setOptions",value:function e(t){var i=this;if(!t)return;var n=this.settings;function r(e,t,i){for(var n in e){if(i&&i.indexOf(n)>=0)continue;t[n]=e[n]}}if(t instanceof HTMLElement)n.parent=t;else{if(n.parent&&t.parent&&n.parent!==t.parent){this._events.remove(n.parent);this._popupInited=false}r(t,n);if(t.onChange)this.onChange=t.onChange;if(t.onDone)this.onDone=t.onDone;if(t.onOpen)this.onOpen=t.onOpen;if(t.onClose)this.onClose=t.onClose;var o=t.color||t.colour;if(o)this._setColor(o)}var s=n.parent;if(s&&n.popup&&!this._popupInited){var a=function e(t){return i.openHandler(t)};this._events.add(s,"click",a);p(this._events,s,[" ","Spacebar","Enter"],a);this._popupInited=true}else if(t.parent&&!n.popup)this.show()}},{key:"openHandler",value:function e(t){if(this.show()){t&&t.preventDefault();this.settings.parent.style.pointerEvents="none";var i=t&&t.type===h?this._domEdit:this.domElement;setTimeout(function(){return i.focus()},100);if(this.onOpen)this.onOpen(this.colour)}}},{key:"closeHandler",value:function e(t){var i=t&&t.type;var n=false;if(!t)n=true;else if(i===d||i===u){var r=(this.__containedEvent||0)+100;if(t.timeStamp>r)n=true}else{g(t);n=true}if(n&&this.hide()){this.settings.parent.style.pointerEvents="";if(i!==d)this.settings.parent.focus();if(this.onClose)this.onClose(this.colour)}}},{key:"movePopup",value:function e(t,i){this.closeHandler();this.setOptions(t);if(i)this.openHandler()}},{key:"setColor",value:function e(t,i){this._setColor(t,{silent:i})}},{key:"_setColor",value:function e(t,i){if(typeof t==="string")t=t.trim();if(!t)return;i=i||{};var n=void 0;try{n=new o(t)}catch(e){if(i.failSilently)return;throw e}if(!this.settings.alpha){var r=n.hsla;r[3]=1;n.hsla=r}this.colour=this.color=n;this._setHSLA(null,null,null,null,i)}},{key:"setColour",value:function e(t,i){this.setColor(t,i)}},{key:"show",value:function e(){var t=this.settings.parent;if(!t)return false;if(this.domElement){var i=this._toggleDOM(true);this._setPosition();return i}var n=this.settings.template||'<div class="picker_wrapper" tabindex="-1"><div class="picker_arrow"></div><div class="picker_hue picker_slider"><div class="picker_selector"></div></div><div class="picker_sl"><div class="picker_selector"></div></div><div class="picker_alpha picker_slider"><div class="picker_selector"></div></div><div class="picker_editor"><input aria-label="Type a color name or hex value"/></div><div class="picker_sample"></div><div class="picker_done"><button>Ok</button></div><div class="picker_cancel"><button>Cancel</button></div></div>';var r=l(n);this.domElement=r;this._domH=w(".picker_hue",r);this._domSL=w(".picker_sl",r);this._domA=w(".picker_alpha",r);this._domEdit=w(".picker_editor input",r);this._domSample=w(".picker_sample",r);this._domOkay=w(".picker_done button",r);this._domCancel=w(".picker_cancel button",r);r.classList.add("layout_"+this.settings.layout);if(!this.settings.alpha)r.classList.add("no_alpha");if(!this.settings.editor)r.classList.add("no_editor");if(!this.settings.cancelButton)r.classList.add("no_cancel");this._ifPopup(function(){return r.classList.add("popup")});this._setPosition();if(this.colour)this._updateUI();else this._setColor(this.settings.defaultColor);this._bindEvents();return true}},{key:"hide",value:function e(){return this._toggleDOM(false)}},{key:"destroy",value:function e(){this._events.destroy();if(this.domElement)this.settings.parent.removeChild(this.domElement)}},{key:"_bindEvents",value:function e(){var i=this;var n=this,r=this.domElement,o=this._events;function s(e,t,i){o.add(e,t,i)}s(r,"click",function(e){return e.preventDefault()});c(o,this._domH,function(e,t){return n._setHSLA(e)});c(o,this._domSL,function(e,t){return n._setHSLA(null,e,1-t)});if(this.settings.alpha)c(o,this._domA,function(e,t){return n._setHSLA(null,null,null,1-t)});var t=this._domEdit;{s(t,"input",function(e){n._setColor(this.value,{fromEditor:true,failSilently:true})});s(t,"focus",function(e){var t=this;if(t.selectionStart===t.selectionEnd)t.select()})}this._ifPopup(function(){var e=function e(t){return i.closeHandler(t)};s(window,d,e);s(window,u,e);p(o,r,["Esc","Escape"],e);var t=function e(t){i.__containedEvent=t.timeStamp};s(r,d,t);s(r,u,t);s(i._domCancel,"click",e)});var a=function e(t){i._ifPopup(function(){return i.closeHandler(t)});if(i.onDone)i.onDone(i.colour)};s(this._domOkay,"click",a);p(o,r,["Enter"],a)}},{key:"_setPosition",value:function e(){var i=this.settings.parent,n=this.domElement;if(i!==n.parentNode)i.appendChild(n);this._ifPopup(function(e){if(getComputedStyle(i).position==="static")i.style.position="relative";var t=e===true?"popup_right":"popup_"+e;["popup_top","popup_bottom","popup_left","popup_right"].forEach(function(e){if(e===t)n.classList.add(e);else n.classList.remove(e)});n.classList.add(t)})}},{key:"_setHSLA",value:function e(t,i,n,r,o){o=o||{};var s=this.colour,a=s.hsla;[t,i,n,r].forEach(function(e,t){if(e||e===0)a[t]=e});s.hsla=a;this._updateUI(o);if(this.onChange&&!o.silent)this.onChange(s)}},{key:"_updateUI",value:function e(t){if(!this.domElement)return;t=t||{};var i=this.colour,n=i.hsla,r="hsl("+n[0]*b+", 100%, 50%)",o=i.hslString,s=i.hslaString;var a=this._domH,l=this._domSL,c=this._domA,h=w(".picker_selector",a),d=w(".picker_selector",l),u=w(".picker_selector",c);function g(e,t,i){t.style.left=i*100+"%"}function p(e,t,i){t.style.top=i*100+"%"}g(a,h,n[0]);this._domSL.style.backgroundColor=this._domH.style.color=r;g(l,d,n[1]);p(l,d,1-n[2]);l.style.color=o;p(c,u,1-n[3]);var m=o,f=m.replace("hsl","hsla").replace(")",", 0)"),C="linear-gradient("+[m,f]+")";this._domA.style.background=C+", "+y;if(!t.fromEditor){var I=this.settings.editorFormat,v=this.settings.alpha;var A=void 0;switch(I){case"rgb":A=i.printRGB(v);break;case"hsl":A=i.printHSL(v);break;default:A=i.printHex(v)}this._domEdit.value=A}this._domSample.style.color=s}},{key:"_ifPopup",value:function e(t,i){if(this.settings.parent&&this.settings.popup)t&&t(this.settings.popup);else i&&i()}},{key:"_toggleDOM",value:function e(t){var i=this.domElement;if(!i)return false;var n=t?"":"none",r=i.style.display!==n;if(r)i.style.display=n;return r}}]);return t}(),n=document.createElement("style");return n.textContent='.picker_wrapper.no_alpha .picker_alpha{display:none}.picker_wrapper.no_editor .picker_editor{position:absolute;z-index:-1;opacity:0}.picker_wrapper.no_cancel .picker_cancel{display:none}.layout_default.picker_wrapper{display:flex;flex-flow:row wrap;justify-content:space-between;align-items:stretch;font-size:10px;width:25em;padding:.5em}.layout_default.picker_wrapper input,.layout_default.picker_wrapper button{font-size:1rem}.layout_default.picker_wrapper>*{margin:.5em}.layout_default.picker_wrapper::before{content:"";display:block;width:100%;height:0;order:1}.layout_default .picker_slider,.layout_default .picker_selector{padding:1em}.layout_default .picker_hue{width:100%}.layout_default .picker_sl{flex:1 1 auto}.layout_default .picker_sl::before{content:"";display:block;padding-bottom:100%}.layout_default .picker_editor{order:1;width:6.5rem}.layout_default .picker_editor input{width:100%;height:100%}.layout_default .picker_sample{order:1;flex:1 1 auto}.layout_default .picker_done,.layout_default .picker_cancel{order:1}.picker_wrapper{box-sizing:border-box;background:#f2f2f2;box-shadow:0 0 0 1px silver;cursor:default;font-family:sans-serif;color:#444;pointer-events:auto}.picker_wrapper:focus{outline:none}.picker_wrapper button,.picker_wrapper input{box-sizing:border-box;border:none;box-shadow:0 0 0 1px silver;outline:none}.picker_wrapper button:focus,.picker_wrapper button:active,.picker_wrapper input:focus,.picker_wrapper input:active{box-shadow:0 0 2px 1px #1e90ff}.picker_wrapper button{padding:.4em .6em;cursor:pointer;background-color:#f5f5f5;background-image:linear-gradient(0deg, gainsboro, transparent)}.picker_wrapper button:active{background-image:linear-gradient(0deg, transparent, gainsboro)}.picker_wrapper button:hover{background-color:#fff}.picker_selector{position:absolute;z-index:1;display:block;-webkit-transform:translate(-50%, -50%);transform:translate(-50%, -50%);border:2px solid #fff;border-radius:100%;box-shadow:0 0 3px 1px #67b9ff;background:currentColor;cursor:pointer}.picker_slider .picker_selector{border-radius:2px}.picker_hue{position:relative;background-image:linear-gradient(90deg, red, yellow, lime, cyan, blue, magenta, red);box-shadow:0 0 0 1px silver}.picker_sl{position:relative;box-shadow:0 0 0 1px silver;background-image:linear-gradient(180deg, white, rgba(255, 255, 255, 0) 50%),linear-gradient(0deg, black, rgba(0, 0, 0, 0) 50%),linear-gradient(90deg, #808080, rgba(128, 128, 128, 0))}.picker_alpha,.picker_sample{position:relative;background:linear-gradient(45deg, lightgrey 25%, transparent 25%, transparent 75%, lightgrey 75%) 0 0/2em 2em,linear-gradient(45deg, lightgrey 25%, white 25%, white 75%, lightgrey 75%) 1em 1em/2em 2em;box-shadow:0 0 0 1px silver}.picker_alpha .picker_selector,.picker_sample .picker_selector{background:none}.picker_editor input{font-family:monospace;padding:.2em .4em}.picker_sample::before{content:"";position:absolute;display:block;width:100%;height:100%;background:currentColor}.picker_arrow{position:absolute;z-index:-1}.picker_wrapper.popup{position:absolute;z-index:2;margin:1.5em}.picker_wrapper.popup,.picker_wrapper.popup .picker_arrow::before,.picker_wrapper.popup .picker_arrow::after{background:#f2f2f2;box-shadow:0 0 10px 1px rgba(0,0,0,.4)}.picker_wrapper.popup .picker_arrow{width:3em;height:3em;margin:0}.picker_wrapper.popup .picker_arrow::before,.picker_wrapper.popup .picker_arrow::after{content:"";display:block;position:absolute;top:0;left:0;z-index:-99}.picker_wrapper.popup .picker_arrow::before{width:100%;height:100%;-webkit-transform:skew(45deg);transform:skew(45deg);-webkit-transform-origin:0 100%;transform-origin:0 100%}.picker_wrapper.popup .picker_arrow::after{width:150%;height:150%;box-shadow:none}.popup.popup_top{bottom:100%;left:0}.popup.popup_top .picker_arrow{bottom:0;left:0;-webkit-transform:rotate(-90deg);transform:rotate(-90deg)}.popup.popup_bottom{top:100%;left:0}.popup.popup_bottom .picker_arrow{top:0;left:0;-webkit-transform:rotate(90deg) scale(1, -1);transform:rotate(90deg) scale(1, -1)}.popup.popup_left{top:0;right:100%}.popup.popup_left .picker_arrow{top:0;right:0;-webkit-transform:scale(-1, 1);transform:scale(-1, 1)}.popup.popup_right{top:0;left:100%}.popup.popup_right .picker_arrow{top:0;left:0}',document.documentElement.firstElementChild.appendChild(n),t.StyleElement=n,t}()},402:function(e,t){"use strict";function i(e,t){if(!(this instanceof i))throw new SyntaxError("Constructor must be called with the new operator");this.message=e+" (char "+t+")",this.char=t,this.stack=(new Error).stack}Object.defineProperty(t,"__esModule",{value:!0}),((t.default=i).prototype=new Error).constructor=Error},3860:function(e,t,i){e.exports=i(7490).default},7490:function(e,t,i){"use strict";t.default=function(e){I="",v=0,A=(C=e).charAt(0),y="",b=d,k();var t=b;if(T(),E(),""===y)return I;if(t===b&&x()){for(var i="";t===b&&x();)I=(0,o.insertBeforeLastWhitespace)(I,","),i+=I,I="",T(),E();return"[\n".concat(i).concat(I,"\n]")}throw new r.default("Unexpected characters",v-y.length)};var r=(t=i(402))&&t.__esModule?t:{default:t},o=i(9422);var n=0,s=1,a=2,l=3,c=4,h=5,d=6,u={"":!0,"{":!0,"}":!0,"[":!0,"]":!0,":":!0,",":!0,"(":!0,")":!0,";":!0,"+":!0},g={'"':'"',"\\":"\\","/":"/",b:"\b",f:"\f",n:"\n",r:"\r",t:"\t"},p={"\b":"\\b","\f":"\\f","\n":"\\n","\r":"\\r","\t":"\\t"},m={null:"null",true:"true",false:"false"},f={None:"null",True:"true",False:"false"},C="",I="",v=0,A="",y="",b=d;function w(){v++,A=C.charAt(v)}function S(){w(),"\\"===A&&w()}function x(){return b===n&&("["===y||"{"===y)||b===a||b===s||b===l}function k(){if(I+=y,b=d,y="",u[A])b=n,y=A,w();else if((0,o.isDigit)(A)||"-"===A){if(b=s,"-"===A){if(y+=A,w(),!(0,o.isDigit)(A))throw new r.default("Invalid number, digit expected",v)}else"0"===A&&(y+=A,w());for(;(0,o.isDigit)(A);)y+=A,w();if("."===A){if(y+=A,w(),!(0,o.isDigit)(A))throw new r.default("Invalid number, digit expected",v);for(;(0,o.isDigit)(A);)y+=A,w()}if("e"===A||"E"===A){if(y+=A,w(),"+"!==A&&"-"!==A||(y+=A,w()),!(0,o.isDigit)(A))throw new r.default("Invalid number, digit expected",v);for(;(0,o.isDigit)(A);)y+=A,w()}}else"\\"===A&&'"'===C.charAt(v+1)?(w(),R(S)):R(w);b===c&&(y=(0,o.normalizeWhitespace)(y),k()),b===h&&(b=d,y="",k())}function E(){","===y&&(y="",b=d,k())}function R(e){if((0,o.isQuote)(A)){var t=(0,o.normalizeQuote)(A),i=(0,o.isSingleQuote)(A)?o.isSingleQuote:o.isDoubleQuote;for(y+='"',b=a,e();""!==A&&!i(A);)if("\\"===A)if(e(),void 0!==g[A])y+="\\"+A,e();else if("u"===A){y+="\\u",e();for(var n=0;n<4;n++){if(!(0,o.isHex)(A))throw new r.default("Invalid unicode character",v-y.length);y+=A,e()}}else{if("'"!==A)throw new r.default('Invalid escape character "\\'+A+'"',v);y+="'",e()}else p[A]?y+=p[A]:y+='"'===A?'\\"':A,e();if((0,o.normalizeQuote)(A)!==t)throw new r.default("End of string expected",v-y.length);return y+='"',void e()}if((0,o.isAlpha)(A))for(b=l;(0,o.isAlpha)(A)||(0,o.isDigit)(A)||"$"===A;)y+=A,w();else if((0,o.isWhitespace)(A)||(0,o.isSpecialWhitespace)(A))for(b=c;(0,o.isWhitespace)(A)||(0,o.isSpecialWhitespace)(A);)y+=A,w();else if("/"===A&&"*"===C[v+1]){for(b=h;""!==A&&("*"!==A||"*"===A&&"/"!==C[v+1]);)y+=A,w();"*"===A&&"/"===C[v+1]&&(y+=A,w(),y+=A,w())}else if("/"===A&&"/"===C[v+1])for(b=h;""!==A&&"\n"!==A;)y+=A,w();else{b=d;for(;""!==A;)y+=A,w();throw new r.default('Syntax error in part "'+y+'"',v-y.length)}}function T(){if(b===n&&"{"===y)if(k(),b===n&&"}"===y)k();else{for(;;){if(b!==l&&b!==s||(b=a,y='"'.concat(y,'"')),b!==a)throw new r.default("Object key expected",v-y.length);if(k(),b===n&&":"===y)k();else{if(!x())throw new r.default("Colon expected",v-y.length);I=(0,o.insertBeforeLastWhitespace)(I,":")}if(T(),b===n&&","===y){if(k(),b===n&&"}"===y){I=(0,o.stripLastOccurrence)(I,",");break}if(""===y){I=(0,o.stripLastOccurrence)(I,",");break}}else{if(b!==a&&b!==s&&b!==l)break;I=(0,o.insertBeforeLastWhitespace)(I,",")}}b===n&&"}"===y?k():I=(0,o.insertBeforeLastWhitespace)(I,"}")}else if(b===n&&"["===y)if(k(),b===n&&"]"===y)k();else{for(;;)if(T(),b===n&&","===y){if(k(),b===n&&"]"===y){I=(0,o.stripLastOccurrence)(I,",");break}if(""===y){I=(0,o.stripLastOccurrence)(I,",");break}}else{if(!x())break;I=(0,o.insertBeforeLastWhitespace)(I,",")}b===n&&"]"===y?k():I=(0,o.insertBeforeLastWhitespace)(I,"]")}else if(b===a)for(k();b===n&&"+"===y;){var e;y="",k(),b===a&&(e=I.lastIndexOf('"'),I=I.substring(0,e)+y.substring(1),y="",k())}else if(b===s)k();else{if(b!==l)throw""===y?new r.default("Unexpected end of json string",v-y.length):new r.default("Value expected",v-y.length);if(m[y])k();else{if(f[y])return void(y=f[y],k());var t=y,i=I.length;if(y="",k(),b===n&&"("===y)return void(y="",k(),T(),b===n&&")"===y&&(y="",k(),b===n&&";"===y&&(y="",k())));for(I=(0,o.insertAtIndex)(I,'"'.concat(t),i);b===l||b===s;)k();I+='"'}}}},9422:function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.isAlpha=function(e){return r.test(e)},t.isHex=function(e){return o.test(e)},t.isDigit=function(e){return s.test(e)},t.isWhitespace=a,t.isSpecialWhitespace=l,t.normalizeWhitespace=function(e){for(var t="",i=0;i<e.length;i++){var n=e[i];t+=l(n)?" ":n}return t},t.isQuote=function(e){return!0===i[e]||!0===n[e]},t.isSingleQuote=function(e){return!0===i[e]},t.isDoubleQuote=function(e){return!0===n[e]},t.normalizeQuote=function(e){return!0!==i[e]?!0!==n[e]?e:'"':"'"},t.stripLastOccurrence=function(e,t){t=e.lastIndexOf(t);return-1!==t?e.substring(0,t)+e.substring(t+1):e},t.insertBeforeLastWhitespace=function(e,t){var i=e.length;if(!a(e[i-1]))return e+t;for(;a(e[i-1]);)i--;return e.substring(0,i)+t+e.substring(i)},t.insertAtIndex=function(e,t,i){return e.substring(0,i)+t+e.substring(i)};var i={"'":!0,"‘":!0,"’":!0,"`":!0,"´":!0},n={'"':!0,"“":!0,"”":!0};var r=/^[a-zA-Z_]$/;var o=/^[0-9a-fA-F]$/;var s=/^[0-9]$/;function a(e){return" "===e||"\t"===e||"\n"===e||"\r"===e}function l(e){return" "===e||" "<=e&&e<=" "||" "===e||" "===e||"　"===e}},894:function(e){"use strict";e.exports=JSON.parse('{"$schema":"http://json-schema.org/draft-07/schema#","$id":"https://raw.githubusercontent.com/ajv-validator/ajv/master/lib/refs/data.json#","description":"Meta-schema for $data reference (JSON Schema extension proposal)","type":"object","required":["$data"],"properties":{"$data":{"type":"string","anyOf":[{"format":"relative-json-pointer"},{"format":"json-pointer"}]}},"additionalProperties":false}')},7171:function(e){"use strict";e.exports=JSON.parse('{"id":"http://json-schema.org/draft-04/schema#","$schema":"http://json-schema.org/draft-04/schema#","description":"Core schema meta-schema","definitions":{"schemaArray":{"type":"array","minItems":1,"items":{"$ref":"#"}},"positiveInteger":{"type":"integer","minimum":0},"positiveIntegerDefault0":{"allOf":[{"$ref":"#/definitions/positiveInteger"},{"default":0}]},"simpleTypes":{"enum":["array","boolean","integer","null","number","object","string"]},"stringArray":{"type":"array","items":{"type":"string"},"minItems":1,"uniqueItems":true}},"type":"object","properties":{"id":{"type":"string"},"$schema":{"type":"string"},"title":{"type":"string"},"description":{"type":"string"},"default":{},"multipleOf":{"type":"number","minimum":0,"exclusiveMinimum":true},"maximum":{"type":"number"},"exclusiveMaximum":{"type":"boolean","default":false},"minimum":{"type":"number"},"exclusiveMinimum":{"type":"boolean","default":false},"maxLength":{"$ref":"#/definitions/positiveInteger"},"minLength":{"$ref":"#/definitions/positiveIntegerDefault0"},"pattern":{"type":"string","format":"regex"},"additionalItems":{"anyOf":[{"type":"boolean"},{"$ref":"#"}],"default":{}},"items":{"anyOf":[{"$ref":"#"},{"$ref":"#/definitions/schemaArray"}],"default":{}},"maxItems":{"$ref":"#/definitions/positiveInteger"},"minItems":{"$ref":"#/definitions/positiveIntegerDefault0"},"uniqueItems":{"type":"boolean","default":false},"maxProperties":{"$ref":"#/definitions/positiveInteger"},"minProperties":{"$ref":"#/definitions/positiveIntegerDefault0"},"required":{"$ref":"#/definitions/stringArray"},"additionalProperties":{"anyOf":[{"type":"boolean"},{"$ref":"#"}],"default":{}},"definitions":{"type":"object","additionalProperties":{"$ref":"#"},"default":{}},"properties":{"type":"object","additionalProperties":{"$ref":"#"},"default":{}},"patternProperties":{"type":"object","additionalProperties":{"$ref":"#"},"default":{}},"dependencies":{"type":"object","additionalProperties":{"anyOf":[{"$ref":"#"},{"$ref":"#/definitions/stringArray"}]}},"enum":{"type":"array","minItems":1,"uniqueItems":true},"type":{"anyOf":[{"$ref":"#/definitions/simpleTypes"},{"type":"array","items":{"$ref":"#/definitions/simpleTypes"},"minItems":1,"uniqueItems":true}]},"format":{"type":"string"},"allOf":{"$ref":"#/definitions/schemaArray"},"anyOf":{"$ref":"#/definitions/schemaArray"},"oneOf":{"$ref":"#/definitions/schemaArray"},"not":{"$ref":"#"}},"dependencies":{"exclusiveMaximum":["maximum"],"exclusiveMinimum":["minimum"]},"default":{}}')},6273:function(e){"use strict";e.exports=JSON.parse('{"$schema":"http://json-schema.org/draft-06/schema#","$id":"http://json-schema.org/draft-06/schema#","title":"Core schema meta-schema","definitions":{"schemaArray":{"type":"array","minItems":1,"items":{"$ref":"#"}},"nonNegativeInteger":{"type":"integer","minimum":0},"nonNegativeIntegerDefault0":{"allOf":[{"$ref":"#/definitions/nonNegativeInteger"},{"default":0}]},"simpleTypes":{"enum":["array","boolean","integer","null","number","object","string"]},"stringArray":{"type":"array","items":{"type":"string"},"uniqueItems":true,"default":[]}},"type":["object","boolean"],"properties":{"$id":{"type":"string","format":"uri-reference"},"$schema":{"type":"string","format":"uri"},"$ref":{"type":"string","format":"uri-reference"},"title":{"type":"string"},"description":{"type":"string"},"default":{},"examples":{"type":"array","items":{}},"multipleOf":{"type":"number","exclusiveMinimum":0},"maximum":{"type":"number"},"exclusiveMaximum":{"type":"number"},"minimum":{"type":"number"},"exclusiveMinimum":{"type":"number"},"maxLength":{"$ref":"#/definitions/nonNegativeInteger"},"minLength":{"$ref":"#/definitions/nonNegativeIntegerDefault0"},"pattern":{"type":"string","format":"regex"},"additionalItems":{"$ref":"#"},"items":{"anyOf":[{"$ref":"#"},{"$ref":"#/definitions/schemaArray"}],"default":{}},"maxItems":{"$ref":"#/definitions/nonNegativeInteger"},"minItems":{"$ref":"#/definitions/nonNegativeIntegerDefault0"},"uniqueItems":{"type":"boolean","default":false},"contains":{"$ref":"#"},"maxProperties":{"$ref":"#/definitions/nonNegativeInteger"},"minProperties":{"$ref":"#/definitions/nonNegativeIntegerDefault0"},"required":{"$ref":"#/definitions/stringArray"},"additionalProperties":{"$ref":"#"},"definitions":{"type":"object","additionalProperties":{"$ref":"#"},"default":{}},"properties":{"type":"object","additionalProperties":{"$ref":"#"},"default":{}},"patternProperties":{"type":"object","additionalProperties":{"$ref":"#"},"default":{}},"dependencies":{"type":"object","additionalProperties":{"anyOf":[{"$ref":"#"},{"$ref":"#/definitions/stringArray"}]}},"propertyNames":{"$ref":"#"},"const":{},"enum":{"type":"array","minItems":1,"uniqueItems":true},"type":{"anyOf":[{"$ref":"#/definitions/simpleTypes"},{"type":"array","items":{"$ref":"#/definitions/simpleTypes"},"minItems":1,"uniqueItems":true}]},"format":{"type":"string"},"allOf":{"$ref":"#/definitions/schemaArray"},"anyOf":{"$ref":"#/definitions/schemaArray"},"oneOf":{"$ref":"#/definitions/schemaArray"},"not":{"$ref":"#"}},"default":{}}')},6680:function(e){"use strict";e.exports=JSON.parse('{"$schema":"http://json-schema.org/draft-07/schema#","$id":"http://json-schema.org/draft-07/schema#","title":"Core schema meta-schema","definitions":{"schemaArray":{"type":"array","minItems":1,"items":{"$ref":"#"}},"nonNegativeInteger":{"type":"integer","minimum":0},"nonNegativeIntegerDefault0":{"allOf":[{"$ref":"#/definitions/nonNegativeInteger"},{"default":0}]},"simpleTypes":{"enum":["array","boolean","integer","null","number","object","string"]},"stringArray":{"type":"array","items":{"type":"string"},"uniqueItems":true,"default":[]}},"type":["object","boolean"],"properties":{"$id":{"type":"string","format":"uri-reference"},"$schema":{"type":"string","format":"uri"},"$ref":{"type":"string","format":"uri-reference"},"$comment":{"type":"string"},"title":{"type":"string"},"description":{"type":"string"},"default":true,"readOnly":{"type":"boolean","default":false},"examples":{"type":"array","items":true},"multipleOf":{"type":"number","exclusiveMinimum":0},"maximum":{"type":"number"},"exclusiveMaximum":{"type":"number"},"minimum":{"type":"number"},"exclusiveMinimum":{"type":"number"},"maxLength":{"$ref":"#/definitions/nonNegativeInteger"},"minLength":{"$ref":"#/definitions/nonNegativeIntegerDefault0"},"pattern":{"type":"string","format":"regex"},"additionalItems":{"$ref":"#"},"items":{"anyOf":[{"$ref":"#"},{"$ref":"#/definitions/schemaArray"}],"default":true},"maxItems":{"$ref":"#/definitions/nonNegativeInteger"},"minItems":{"$ref":"#/definitions/nonNegativeIntegerDefault0"},"uniqueItems":{"type":"boolean","default":false},"contains":{"$ref":"#"},"maxProperties":{"$ref":"#/definitions/nonNegativeInteger"},"minProperties":{"$ref":"#/definitions/nonNegativeIntegerDefault0"},"required":{"$ref":"#/definitions/stringArray"},"additionalProperties":{"$ref":"#"},"definitions":{"type":"object","additionalProperties":{"$ref":"#"},"default":{}},"properties":{"type":"object","additionalProperties":{"$ref":"#"},"default":{}},"patternProperties":{"type":"object","additionalProperties":{"$ref":"#"},"propertyNames":{"format":"regex"},"default":{}},"dependencies":{"type":"object","additionalProperties":{"anyOf":[{"$ref":"#"},{"$ref":"#/definitions/stringArray"}]}},"propertyNames":{"$ref":"#"},"const":true,"enum":{"type":"array","items":true,"minItems":1,"uniqueItems":true},"type":{"anyOf":[{"$ref":"#/definitions/simpleTypes"},{"type":"array","items":{"$ref":"#/definitions/simpleTypes"},"minItems":1,"uniqueItems":true}]},"format":{"type":"string"},"contentMediaType":{"type":"string"},"contentEncoding":{"type":"string"},"if":{"$ref":"#"},"then":{"$ref":"#"},"else":{"$ref":"#"},"allOf":{"$ref":"#/definitions/schemaArray"},"anyOf":{"$ref":"#/definitions/schemaArray"},"oneOf":{"$ref":"#/definitions/schemaArray"},"not":{"$ref":"#"}},"default":true}')}},r={},n.amdD=function(){throw new Error("define cannot be used indirect")},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,{a:t}),t},n.d=function(e,t){for(var i in t)n.o(t,i)&&!n.o(e,i)&&Object.defineProperty(e,i,{enumerable:!0,get:t[i]})},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},n.nmd=function(e){return e.paths=[],e.children||(e.children=[]),e},n(3161);function n(e){var t=r[e];if(void 0!==t)return t.exports;t=r[e]={id:e,loaded:!1,exports:{}};return i[e].call(t.exports,t,t.exports,n),t.loaded=!0,t.exports}var i,r});
 
-},{}],11:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 var hashClear = require('./_hashClear'),
     hashDelete = require('./_hashDelete'),
     hashGet = require('./_hashGet'),
@@ -36161,7 +35960,7 @@ Hash.prototype.set = hashSet;
 
 module.exports = Hash;
 
-},{"./_hashClear":35,"./_hashDelete":36,"./_hashGet":37,"./_hashHas":38,"./_hashSet":39}],12:[function(require,module,exports){
+},{"./_hashClear":34,"./_hashDelete":35,"./_hashGet":36,"./_hashHas":37,"./_hashSet":38}],11:[function(require,module,exports){
 var listCacheClear = require('./_listCacheClear'),
     listCacheDelete = require('./_listCacheDelete'),
     listCacheGet = require('./_listCacheGet'),
@@ -36195,7 +35994,7 @@ ListCache.prototype.set = listCacheSet;
 
 module.exports = ListCache;
 
-},{"./_listCacheClear":44,"./_listCacheDelete":45,"./_listCacheGet":46,"./_listCacheHas":47,"./_listCacheSet":48}],13:[function(require,module,exports){
+},{"./_listCacheClear":43,"./_listCacheDelete":44,"./_listCacheGet":45,"./_listCacheHas":46,"./_listCacheSet":47}],12:[function(require,module,exports){
 var getNative = require('./_getNative'),
     root = require('./_root');
 
@@ -36204,7 +36003,7 @@ var Map = getNative(root, 'Map');
 
 module.exports = Map;
 
-},{"./_getNative":32,"./_root":57}],14:[function(require,module,exports){
+},{"./_getNative":31,"./_root":56}],13:[function(require,module,exports){
 var mapCacheClear = require('./_mapCacheClear'),
     mapCacheDelete = require('./_mapCacheDelete'),
     mapCacheGet = require('./_mapCacheGet'),
@@ -36238,7 +36037,7 @@ MapCache.prototype.set = mapCacheSet;
 
 module.exports = MapCache;
 
-},{"./_mapCacheClear":49,"./_mapCacheDelete":50,"./_mapCacheGet":51,"./_mapCacheHas":52,"./_mapCacheSet":53}],15:[function(require,module,exports){
+},{"./_mapCacheClear":48,"./_mapCacheDelete":49,"./_mapCacheGet":50,"./_mapCacheHas":51,"./_mapCacheSet":52}],14:[function(require,module,exports){
 var root = require('./_root');
 
 /** Built-in value references. */
@@ -36246,7 +36045,7 @@ var Symbol = root.Symbol;
 
 module.exports = Symbol;
 
-},{"./_root":57}],16:[function(require,module,exports){
+},{"./_root":56}],15:[function(require,module,exports){
 /**
  * A specialized version of `_.map` for arrays without support for iteratee
  * shorthands.
@@ -36269,7 +36068,7 @@ function arrayMap(array, iteratee) {
 
 module.exports = arrayMap;
 
-},{}],17:[function(require,module,exports){
+},{}],16:[function(require,module,exports){
 var baseAssignValue = require('./_baseAssignValue'),
     eq = require('./eq');
 
@@ -36299,7 +36098,7 @@ function assignValue(object, key, value) {
 
 module.exports = assignValue;
 
-},{"./_baseAssignValue":19,"./eq":63}],18:[function(require,module,exports){
+},{"./_baseAssignValue":18,"./eq":62}],17:[function(require,module,exports){
 var eq = require('./eq');
 
 /**
@@ -36322,7 +36121,7 @@ function assocIndexOf(array, key) {
 
 module.exports = assocIndexOf;
 
-},{"./eq":63}],19:[function(require,module,exports){
+},{"./eq":62}],18:[function(require,module,exports){
 var defineProperty = require('./_defineProperty');
 
 /**
@@ -36349,7 +36148,7 @@ function baseAssignValue(object, key, value) {
 
 module.exports = baseAssignValue;
 
-},{"./_defineProperty":29}],20:[function(require,module,exports){
+},{"./_defineProperty":28}],19:[function(require,module,exports){
 var castPath = require('./_castPath'),
     toKey = require('./_toKey');
 
@@ -36375,7 +36174,7 @@ function baseGet(object, path) {
 
 module.exports = baseGet;
 
-},{"./_castPath":26,"./_toKey":59}],21:[function(require,module,exports){
+},{"./_castPath":25,"./_toKey":58}],20:[function(require,module,exports){
 var Symbol = require('./_Symbol'),
     getRawTag = require('./_getRawTag'),
     objectToString = require('./_objectToString');
@@ -36405,7 +36204,7 @@ function baseGetTag(value) {
 
 module.exports = baseGetTag;
 
-},{"./_Symbol":15,"./_getRawTag":33,"./_objectToString":56}],22:[function(require,module,exports){
+},{"./_Symbol":14,"./_getRawTag":32,"./_objectToString":55}],21:[function(require,module,exports){
 var isFunction = require('./isFunction'),
     isMasked = require('./_isMasked'),
     isObject = require('./isObject'),
@@ -36454,7 +36253,7 @@ function baseIsNative(value) {
 
 module.exports = baseIsNative;
 
-},{"./_isMasked":43,"./_toSource":60,"./isFunction":66,"./isObject":67}],23:[function(require,module,exports){
+},{"./_isMasked":42,"./_toSource":59,"./isFunction":65,"./isObject":66}],22:[function(require,module,exports){
 var assignValue = require('./_assignValue'),
     castPath = require('./_castPath'),
     isIndex = require('./_isIndex'),
@@ -36507,7 +36306,7 @@ function baseSet(object, path, value, customizer) {
 
 module.exports = baseSet;
 
-},{"./_assignValue":17,"./_castPath":26,"./_isIndex":40,"./_toKey":59,"./isObject":67}],24:[function(require,module,exports){
+},{"./_assignValue":16,"./_castPath":25,"./_isIndex":39,"./_toKey":58,"./isObject":66}],23:[function(require,module,exports){
 var Symbol = require('./_Symbol'),
     arrayMap = require('./_arrayMap'),
     isArray = require('./isArray'),
@@ -36546,7 +36345,7 @@ function baseToString(value) {
 
 module.exports = baseToString;
 
-},{"./_Symbol":15,"./_arrayMap":16,"./isArray":65,"./isSymbol":69}],25:[function(require,module,exports){
+},{"./_Symbol":14,"./_arrayMap":15,"./isArray":64,"./isSymbol":68}],24:[function(require,module,exports){
 var trimmedEndIndex = require('./_trimmedEndIndex');
 
 /** Used to match leading whitespace. */
@@ -36567,7 +36366,7 @@ function baseTrim(string) {
 
 module.exports = baseTrim;
 
-},{"./_trimmedEndIndex":61}],26:[function(require,module,exports){
+},{"./_trimmedEndIndex":60}],25:[function(require,module,exports){
 var isArray = require('./isArray'),
     isKey = require('./_isKey'),
     stringToPath = require('./_stringToPath'),
@@ -36590,7 +36389,7 @@ function castPath(value, object) {
 
 module.exports = castPath;
 
-},{"./_isKey":41,"./_stringToPath":58,"./isArray":65,"./toString":75}],27:[function(require,module,exports){
+},{"./_isKey":40,"./_stringToPath":57,"./isArray":64,"./toString":74}],26:[function(require,module,exports){
 /**
  * Copies the values of `source` to `array`.
  *
@@ -36612,7 +36411,7 @@ function copyArray(source, array) {
 
 module.exports = copyArray;
 
-},{}],28:[function(require,module,exports){
+},{}],27:[function(require,module,exports){
 var root = require('./_root');
 
 /** Used to detect overreaching core-js shims. */
@@ -36620,7 +36419,7 @@ var coreJsData = root['__core-js_shared__'];
 
 module.exports = coreJsData;
 
-},{"./_root":57}],29:[function(require,module,exports){
+},{"./_root":56}],28:[function(require,module,exports){
 var getNative = require('./_getNative');
 
 var defineProperty = (function() {
@@ -36633,7 +36432,7 @@ var defineProperty = (function() {
 
 module.exports = defineProperty;
 
-},{"./_getNative":32}],30:[function(require,module,exports){
+},{"./_getNative":31}],29:[function(require,module,exports){
 (function (global){(function (){
 /** Detect free variable `global` from Node.js. */
 var freeGlobal = typeof global == 'object' && global && global.Object === Object && global;
@@ -36641,7 +36440,7 @@ var freeGlobal = typeof global == 'object' && global && global.Object === Object
 module.exports = freeGlobal;
 
 }).call(this)}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],31:[function(require,module,exports){
+},{}],30:[function(require,module,exports){
 var isKeyable = require('./_isKeyable');
 
 /**
@@ -36661,7 +36460,7 @@ function getMapData(map, key) {
 
 module.exports = getMapData;
 
-},{"./_isKeyable":42}],32:[function(require,module,exports){
+},{"./_isKeyable":41}],31:[function(require,module,exports){
 var baseIsNative = require('./_baseIsNative'),
     getValue = require('./_getValue');
 
@@ -36680,7 +36479,7 @@ function getNative(object, key) {
 
 module.exports = getNative;
 
-},{"./_baseIsNative":22,"./_getValue":34}],33:[function(require,module,exports){
+},{"./_baseIsNative":21,"./_getValue":33}],32:[function(require,module,exports){
 var Symbol = require('./_Symbol');
 
 /** Used for built-in method references. */
@@ -36728,7 +36527,7 @@ function getRawTag(value) {
 
 module.exports = getRawTag;
 
-},{"./_Symbol":15}],34:[function(require,module,exports){
+},{"./_Symbol":14}],33:[function(require,module,exports){
 /**
  * Gets the value at `key` of `object`.
  *
@@ -36743,7 +36542,7 @@ function getValue(object, key) {
 
 module.exports = getValue;
 
-},{}],35:[function(require,module,exports){
+},{}],34:[function(require,module,exports){
 var nativeCreate = require('./_nativeCreate');
 
 /**
@@ -36760,7 +36559,7 @@ function hashClear() {
 
 module.exports = hashClear;
 
-},{"./_nativeCreate":55}],36:[function(require,module,exports){
+},{"./_nativeCreate":54}],35:[function(require,module,exports){
 /**
  * Removes `key` and its value from the hash.
  *
@@ -36779,7 +36578,7 @@ function hashDelete(key) {
 
 module.exports = hashDelete;
 
-},{}],37:[function(require,module,exports){
+},{}],36:[function(require,module,exports){
 var nativeCreate = require('./_nativeCreate');
 
 /** Used to stand-in for `undefined` hash values. */
@@ -36811,7 +36610,7 @@ function hashGet(key) {
 
 module.exports = hashGet;
 
-},{"./_nativeCreate":55}],38:[function(require,module,exports){
+},{"./_nativeCreate":54}],37:[function(require,module,exports){
 var nativeCreate = require('./_nativeCreate');
 
 /** Used for built-in method references. */
@@ -36836,7 +36635,7 @@ function hashHas(key) {
 
 module.exports = hashHas;
 
-},{"./_nativeCreate":55}],39:[function(require,module,exports){
+},{"./_nativeCreate":54}],38:[function(require,module,exports){
 var nativeCreate = require('./_nativeCreate');
 
 /** Used to stand-in for `undefined` hash values. */
@@ -36861,7 +36660,7 @@ function hashSet(key, value) {
 
 module.exports = hashSet;
 
-},{"./_nativeCreate":55}],40:[function(require,module,exports){
+},{"./_nativeCreate":54}],39:[function(require,module,exports){
 /** Used as references for various `Number` constants. */
 var MAX_SAFE_INTEGER = 9007199254740991;
 
@@ -36888,7 +36687,7 @@ function isIndex(value, length) {
 
 module.exports = isIndex;
 
-},{}],41:[function(require,module,exports){
+},{}],40:[function(require,module,exports){
 var isArray = require('./isArray'),
     isSymbol = require('./isSymbol');
 
@@ -36919,7 +36718,7 @@ function isKey(value, object) {
 
 module.exports = isKey;
 
-},{"./isArray":65,"./isSymbol":69}],42:[function(require,module,exports){
+},{"./isArray":64,"./isSymbol":68}],41:[function(require,module,exports){
 /**
  * Checks if `value` is suitable for use as unique object key.
  *
@@ -36936,7 +36735,7 @@ function isKeyable(value) {
 
 module.exports = isKeyable;
 
-},{}],43:[function(require,module,exports){
+},{}],42:[function(require,module,exports){
 var coreJsData = require('./_coreJsData');
 
 /** Used to detect methods masquerading as native. */
@@ -36958,7 +36757,7 @@ function isMasked(func) {
 
 module.exports = isMasked;
 
-},{"./_coreJsData":28}],44:[function(require,module,exports){
+},{"./_coreJsData":27}],43:[function(require,module,exports){
 /**
  * Removes all key-value entries from the list cache.
  *
@@ -36973,7 +36772,7 @@ function listCacheClear() {
 
 module.exports = listCacheClear;
 
-},{}],45:[function(require,module,exports){
+},{}],44:[function(require,module,exports){
 var assocIndexOf = require('./_assocIndexOf');
 
 /** Used for built-in method references. */
@@ -37010,7 +36809,7 @@ function listCacheDelete(key) {
 
 module.exports = listCacheDelete;
 
-},{"./_assocIndexOf":18}],46:[function(require,module,exports){
+},{"./_assocIndexOf":17}],45:[function(require,module,exports){
 var assocIndexOf = require('./_assocIndexOf');
 
 /**
@@ -37031,7 +36830,7 @@ function listCacheGet(key) {
 
 module.exports = listCacheGet;
 
-},{"./_assocIndexOf":18}],47:[function(require,module,exports){
+},{"./_assocIndexOf":17}],46:[function(require,module,exports){
 var assocIndexOf = require('./_assocIndexOf');
 
 /**
@@ -37049,7 +36848,7 @@ function listCacheHas(key) {
 
 module.exports = listCacheHas;
 
-},{"./_assocIndexOf":18}],48:[function(require,module,exports){
+},{"./_assocIndexOf":17}],47:[function(require,module,exports){
 var assocIndexOf = require('./_assocIndexOf');
 
 /**
@@ -37077,7 +36876,7 @@ function listCacheSet(key, value) {
 
 module.exports = listCacheSet;
 
-},{"./_assocIndexOf":18}],49:[function(require,module,exports){
+},{"./_assocIndexOf":17}],48:[function(require,module,exports){
 var Hash = require('./_Hash'),
     ListCache = require('./_ListCache'),
     Map = require('./_Map');
@@ -37100,7 +36899,7 @@ function mapCacheClear() {
 
 module.exports = mapCacheClear;
 
-},{"./_Hash":11,"./_ListCache":12,"./_Map":13}],50:[function(require,module,exports){
+},{"./_Hash":10,"./_ListCache":11,"./_Map":12}],49:[function(require,module,exports){
 var getMapData = require('./_getMapData');
 
 /**
@@ -37120,7 +36919,7 @@ function mapCacheDelete(key) {
 
 module.exports = mapCacheDelete;
 
-},{"./_getMapData":31}],51:[function(require,module,exports){
+},{"./_getMapData":30}],50:[function(require,module,exports){
 var getMapData = require('./_getMapData');
 
 /**
@@ -37138,7 +36937,7 @@ function mapCacheGet(key) {
 
 module.exports = mapCacheGet;
 
-},{"./_getMapData":31}],52:[function(require,module,exports){
+},{"./_getMapData":30}],51:[function(require,module,exports){
 var getMapData = require('./_getMapData');
 
 /**
@@ -37156,7 +36955,7 @@ function mapCacheHas(key) {
 
 module.exports = mapCacheHas;
 
-},{"./_getMapData":31}],53:[function(require,module,exports){
+},{"./_getMapData":30}],52:[function(require,module,exports){
 var getMapData = require('./_getMapData');
 
 /**
@@ -37180,7 +36979,7 @@ function mapCacheSet(key, value) {
 
 module.exports = mapCacheSet;
 
-},{"./_getMapData":31}],54:[function(require,module,exports){
+},{"./_getMapData":30}],53:[function(require,module,exports){
 var memoize = require('./memoize');
 
 /** Used as the maximum memoize cache size. */
@@ -37208,7 +37007,7 @@ function memoizeCapped(func) {
 
 module.exports = memoizeCapped;
 
-},{"./memoize":70}],55:[function(require,module,exports){
+},{"./memoize":69}],54:[function(require,module,exports){
 var getNative = require('./_getNative');
 
 /* Built-in method references that are verified to be native. */
@@ -37216,7 +37015,7 @@ var nativeCreate = getNative(Object, 'create');
 
 module.exports = nativeCreate;
 
-},{"./_getNative":32}],56:[function(require,module,exports){
+},{"./_getNative":31}],55:[function(require,module,exports){
 /** Used for built-in method references. */
 var objectProto = Object.prototype;
 
@@ -37240,7 +37039,7 @@ function objectToString(value) {
 
 module.exports = objectToString;
 
-},{}],57:[function(require,module,exports){
+},{}],56:[function(require,module,exports){
 var freeGlobal = require('./_freeGlobal');
 
 /** Detect free variable `self`. */
@@ -37251,7 +37050,7 @@ var root = freeGlobal || freeSelf || Function('return this')();
 
 module.exports = root;
 
-},{"./_freeGlobal":30}],58:[function(require,module,exports){
+},{"./_freeGlobal":29}],57:[function(require,module,exports){
 var memoizeCapped = require('./_memoizeCapped');
 
 /** Used to match property names within property paths. */
@@ -37280,7 +37079,7 @@ var stringToPath = memoizeCapped(function(string) {
 
 module.exports = stringToPath;
 
-},{"./_memoizeCapped":54}],59:[function(require,module,exports){
+},{"./_memoizeCapped":53}],58:[function(require,module,exports){
 var isSymbol = require('./isSymbol');
 
 /** Used as references for various `Number` constants. */
@@ -37303,7 +37102,7 @@ function toKey(value) {
 
 module.exports = toKey;
 
-},{"./isSymbol":69}],60:[function(require,module,exports){
+},{"./isSymbol":68}],59:[function(require,module,exports){
 /** Used for built-in method references. */
 var funcProto = Function.prototype;
 
@@ -37331,7 +37130,7 @@ function toSource(func) {
 
 module.exports = toSource;
 
-},{}],61:[function(require,module,exports){
+},{}],60:[function(require,module,exports){
 /** Used to match a single whitespace character. */
 var reWhitespace = /\s/;
 
@@ -37352,7 +37151,7 @@ function trimmedEndIndex(string) {
 
 module.exports = trimmedEndIndex;
 
-},{}],62:[function(require,module,exports){
+},{}],61:[function(require,module,exports){
 var isObject = require('./isObject'),
     now = require('./now'),
     toNumber = require('./toNumber');
@@ -37545,7 +37344,7 @@ function debounce(func, wait, options) {
 
 module.exports = debounce;
 
-},{"./isObject":67,"./now":71,"./toNumber":73}],63:[function(require,module,exports){
+},{"./isObject":66,"./now":70,"./toNumber":72}],62:[function(require,module,exports){
 /**
  * Performs a
  * [`SameValueZero`](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
@@ -37584,7 +37383,7 @@ function eq(value, other) {
 
 module.exports = eq;
 
-},{}],64:[function(require,module,exports){
+},{}],63:[function(require,module,exports){
 var baseGet = require('./_baseGet');
 
 /**
@@ -37619,7 +37418,7 @@ function get(object, path, defaultValue) {
 
 module.exports = get;
 
-},{"./_baseGet":20}],65:[function(require,module,exports){
+},{"./_baseGet":19}],64:[function(require,module,exports){
 /**
  * Checks if `value` is classified as an `Array` object.
  *
@@ -37647,7 +37446,7 @@ var isArray = Array.isArray;
 
 module.exports = isArray;
 
-},{}],66:[function(require,module,exports){
+},{}],65:[function(require,module,exports){
 var baseGetTag = require('./_baseGetTag'),
     isObject = require('./isObject');
 
@@ -37686,7 +37485,7 @@ function isFunction(value) {
 
 module.exports = isFunction;
 
-},{"./_baseGetTag":21,"./isObject":67}],67:[function(require,module,exports){
+},{"./_baseGetTag":20,"./isObject":66}],66:[function(require,module,exports){
 /**
  * Checks if `value` is the
  * [language type](http://www.ecma-international.org/ecma-262/7.0/#sec-ecmascript-language-types)
@@ -37719,7 +37518,7 @@ function isObject(value) {
 
 module.exports = isObject;
 
-},{}],68:[function(require,module,exports){
+},{}],67:[function(require,module,exports){
 /**
  * Checks if `value` is object-like. A value is object-like if it's not `null`
  * and has a `typeof` result of "object".
@@ -37750,7 +37549,7 @@ function isObjectLike(value) {
 
 module.exports = isObjectLike;
 
-},{}],69:[function(require,module,exports){
+},{}],68:[function(require,module,exports){
 var baseGetTag = require('./_baseGetTag'),
     isObjectLike = require('./isObjectLike');
 
@@ -37781,7 +37580,7 @@ function isSymbol(value) {
 
 module.exports = isSymbol;
 
-},{"./_baseGetTag":21,"./isObjectLike":68}],70:[function(require,module,exports){
+},{"./_baseGetTag":20,"./isObjectLike":67}],69:[function(require,module,exports){
 var MapCache = require('./_MapCache');
 
 /** Error message constants. */
@@ -37856,7 +37655,7 @@ memoize.Cache = MapCache;
 
 module.exports = memoize;
 
-},{"./_MapCache":14}],71:[function(require,module,exports){
+},{"./_MapCache":13}],70:[function(require,module,exports){
 var root = require('./_root');
 
 /**
@@ -37881,7 +37680,7 @@ var now = function() {
 
 module.exports = now;
 
-},{"./_root":57}],72:[function(require,module,exports){
+},{"./_root":56}],71:[function(require,module,exports){
 var baseSet = require('./_baseSet');
 
 /**
@@ -37918,7 +37717,7 @@ function set(object, path, value) {
 
 module.exports = set;
 
-},{"./_baseSet":23}],73:[function(require,module,exports){
+},{"./_baseSet":22}],72:[function(require,module,exports){
 var baseTrim = require('./_baseTrim'),
     isObject = require('./isObject'),
     isSymbol = require('./isSymbol');
@@ -37984,7 +37783,7 @@ function toNumber(value) {
 
 module.exports = toNumber;
 
-},{"./_baseTrim":25,"./isObject":67,"./isSymbol":69}],74:[function(require,module,exports){
+},{"./_baseTrim":24,"./isObject":66,"./isSymbol":68}],73:[function(require,module,exports){
 var arrayMap = require('./_arrayMap'),
     copyArray = require('./_copyArray'),
     isArray = require('./isArray'),
@@ -38019,7 +37818,7 @@ function toPath(value) {
 
 module.exports = toPath;
 
-},{"./_arrayMap":16,"./_copyArray":27,"./_stringToPath":58,"./_toKey":59,"./isArray":65,"./isSymbol":69,"./toString":75}],75:[function(require,module,exports){
+},{"./_arrayMap":15,"./_copyArray":26,"./_stringToPath":57,"./_toKey":58,"./isArray":64,"./isSymbol":68,"./toString":74}],74:[function(require,module,exports){
 var baseToString = require('./_baseToString');
 
 /**
@@ -38049,7 +37848,7 @@ function toString(value) {
 
 module.exports = toString;
 
-},{"./_baseToString":24}],76:[function(require,module,exports){
+},{"./_baseToString":23}],75:[function(require,module,exports){
 // shim for using process in browser
 var process = module.exports = {};
 
@@ -38235,7 +38034,7 @@ process.chdir = function (dir) {
 };
 process.umask = function() { return 0; };
 
-},{}],77:[function(require,module,exports){
+},{}],76:[function(require,module,exports){
 (function (setImmediate,clearImmediate){(function (){
 var nextTick = require('process/browser.js').nextTick;
 var apply = Function.prototype.apply;
@@ -38314,7 +38113,7 @@ exports.clearImmediate = typeof clearImmediate === "function" ? clearImmediate :
   delete immediateIds[id];
 };
 }).call(this)}).call(this,require("timers").setImmediate,require("timers").clearImmediate)
-},{"process/browser.js":76,"timers":77}],78:[function(require,module,exports){
+},{"process/browser.js":75,"timers":76}],77:[function(require,module,exports){
 /**
  * Copyright 2020 Google LLC
  *
@@ -38331,41 +38130,81 @@ exports.clearImmediate = typeof clearImmediate === "function" ? clearImmediate :
  * limitations under the License.
  */
 module.exports = Worker;
-},{}],79:[function(require,module,exports){
+},{}],78:[function(require,module,exports){
 var css = ".jsoneditor input,\n.jsoneditor input:not([type]),\n.jsoneditor input[type=search],\n.jsoneditor input[type=text],\n.jsoneditor-modal input,\n.jsoneditor-modal input:not([type]),\n.jsoneditor-modal input[type=search],\n.jsoneditor-modal input[type=text] {\n  height: auto;\n  border: inherit;\n  box-shadow: none;\n  font-size: inherit;\n  box-sizing: inherit;\n  padding: inherit;\n  font-family: inherit;\n  transition: none;\n  line-height: inherit;\n}\n.jsoneditor input:focus,\n.jsoneditor input:not([type]):focus,\n.jsoneditor input[type=search]:focus,\n.jsoneditor input[type=text]:focus,\n.jsoneditor-modal input:focus,\n.jsoneditor-modal input:not([type]):focus,\n.jsoneditor-modal input[type=search]:focus,\n.jsoneditor-modal input[type=text]:focus {\n  border: inherit;\n  box-shadow: inherit;\n}\n.jsoneditor textarea,\n.jsoneditor-modal textarea {\n  height: inherit;\n}\n.jsoneditor select,\n.jsoneditor-modal select {\n  display: inherit;\n  height: inherit;\n}\n.jsoneditor label,\n.jsoneditor-modal label {\n  font-size: inherit;\n  font-weight: inherit;\n  color: inherit;\n}\n.jsoneditor table,\n.jsoneditor-modal table {\n  border-collapse: collapse;\n  width: auto;\n}\n.jsoneditor td,\n.jsoneditor th,\n.jsoneditor-modal td,\n.jsoneditor-modal th {\n  padding: 0;\n  display: table-cell;\n  text-align: left;\n  vertical-align: inherit;\n  border-radius: inherit;\n}\n.jsoneditor .autocomplete.dropdown {\n  position: absolute;\n  background: #fff;\n  box-shadow: 2px 2px 12px rgba(128,128,128,.3);\n  border: 1px solid #d3d3d3;\n  overflow-x: hidden;\n  overflow-y: auto;\n  cursor: default;\n  margin: 0;\n  padding: 5px;\n  text-align: left;\n  outline: 0;\n  font-family: consolas,menlo,monaco,\"Ubuntu Mono\",source-code-pro,monospace;\n  font-size: 14px;\n}\n.jsoneditor .autocomplete.dropdown .item {\n  color: #1a1a1a;\n}\n.jsoneditor .autocomplete.dropdown .item.hover {\n  background-color: #ebebeb;\n}\n.jsoneditor .autocomplete.hint {\n  color: #a1a1a1;\n  top: 4px;\n  left: 4px;\n}\n.jsoneditor-contextmenu-root {\n  position: relative;\n  width: 0;\n  height: 0;\n}\n.jsoneditor-contextmenu {\n  position: absolute;\n  box-sizing: content-box;\n  z-index: 2;\n}\n.jsoneditor-contextmenu .jsoneditor-menu {\n  position: relative;\n  left: 0;\n  top: 0;\n  width: 128px;\n  height: auto;\n  background: #fff;\n  border: 1px solid #d3d3d3;\n  box-shadow: 2px 2px 12px rgba(128,128,128,.3);\n  list-style: none;\n  margin: 0;\n  padding: 0;\n}\n.jsoneditor-contextmenu .jsoneditor-menu button {\n  position: relative;\n  padding: 0 8px 0 0;\n  margin: 0;\n  width: 128px;\n  height: auto;\n  border: none;\n  cursor: pointer;\n  color: #4d4d4d;\n  background: 0 0;\n  font-size: 14px;\n  font-family: arial,sans-serif;\n  box-sizing: border-box;\n  text-align: left;\n}\n.jsoneditor-contextmenu .jsoneditor-menu button::-moz-focus-inner {\n  padding: 0;\n  border: 0;\n}\n.jsoneditor-contextmenu .jsoneditor-menu button.jsoneditor-default {\n  width: 96px;\n}\n.jsoneditor-contextmenu .jsoneditor-menu button.jsoneditor-expand {\n  float: right;\n  width: 32px;\n  height: 24px;\n  border-left: 1px solid #e5e5e5;\n}\n.jsoneditor-contextmenu .jsoneditor-menu li {\n  overflow: hidden;\n}\n.jsoneditor-contextmenu .jsoneditor-menu li ul {\n  display: none;\n  position: relative;\n  left: -10px;\n  top: 0;\n  border: none;\n  box-shadow: inset 0 0 10px rgba(128,128,128,.5);\n  padding: 0 10px;\n  -webkit-transition: all .3s ease-out;\n  -moz-transition: all .3s ease-out;\n  -o-transition: all .3s ease-out;\n  transition: all .3s ease-out;\n}\n.jsoneditor-contextmenu .jsoneditor-menu li ul .jsoneditor-icon {\n  margin-left: 24px;\n}\n.jsoneditor-contextmenu .jsoneditor-menu li ul li button {\n  padding-left: 24px;\n  animation: all ease-in-out 1s;\n}\n.jsoneditor-contextmenu .jsoneditor-menu li button .jsoneditor-expand {\n  position: absolute;\n  top: 0;\n  right: 0;\n  width: 24px;\n  height: 24px;\n  padding: 0;\n  margin: 0 4px 0 0;\n  background-image: url(node_modules/jsoneditor/dist/img/jsoneditor-icons.svg);\n  background-position: 0 -72px;\n}\n.jsoneditor-contextmenu .jsoneditor-icon {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 24px;\n  height: 24px;\n  border: none;\n  padding: 0;\n  margin: 0;\n  background-image: url(node_modules/jsoneditor/dist/img/jsoneditor-icons.svg);\n}\n.jsoneditor-contextmenu .jsoneditor-text {\n  padding: 4px 0 4px 24px;\n  word-wrap: break-word;\n}\n.jsoneditor-contextmenu .jsoneditor-text.jsoneditor-right-margin {\n  padding-right: 24px;\n}\n.jsoneditor-contextmenu .jsoneditor-separator {\n  height: 0;\n  border-top: 1px solid #e5e5e5;\n  padding-top: 5px;\n  margin-top: 5px;\n}\n.jsoneditor-contextmenu button.jsoneditor-remove .jsoneditor-icon {\n  background-position: -24px 0;\n}\n.jsoneditor-contextmenu button.jsoneditor-append .jsoneditor-icon {\n  background-position: 0 0;\n}\n.jsoneditor-contextmenu button.jsoneditor-insert .jsoneditor-icon {\n  background-position: 0 0;\n}\n.jsoneditor-contextmenu button.jsoneditor-duplicate .jsoneditor-icon {\n  background-position: -48px 0;\n}\n.jsoneditor-contextmenu button.jsoneditor-sort-asc .jsoneditor-icon {\n  background-position: -168px 0;\n}\n.jsoneditor-contextmenu button.jsoneditor-sort-desc .jsoneditor-icon {\n  background-position: -192px 0;\n}\n.jsoneditor-contextmenu button.jsoneditor-transform .jsoneditor-icon {\n  background-position: -216px 0;\n}\n.jsoneditor-contextmenu button.jsoneditor-extract .jsoneditor-icon {\n  background-position: 0 -24px;\n}\n.jsoneditor-contextmenu button.jsoneditor-type-string .jsoneditor-icon {\n  background-position: -144px 0;\n}\n.jsoneditor-contextmenu button.jsoneditor-type-auto .jsoneditor-icon {\n  background-position: -120px 0;\n}\n.jsoneditor-contextmenu button.jsoneditor-type-object .jsoneditor-icon {\n  background-position: -72px 0;\n}\n.jsoneditor-contextmenu button.jsoneditor-type-array .jsoneditor-icon {\n  background-position: -96px 0;\n}\n.jsoneditor-contextmenu button.jsoneditor-type-modes .jsoneditor-icon {\n  background-image: none;\n  width: 6px;\n}\n.jsoneditor-contextmenu li,\n.jsoneditor-contextmenu ul {\n  box-sizing: content-box;\n  position: relative;\n}\n.jsoneditor-contextmenu .jsoneditor-menu button:focus,\n.jsoneditor-contextmenu .jsoneditor-menu button:hover {\n  color: #1a1a1a;\n  background-color: #f5f5f5;\n  outline: 0;\n}\n.jsoneditor-contextmenu .jsoneditor-menu li button.jsoneditor-selected,\n.jsoneditor-contextmenu .jsoneditor-menu li button.jsoneditor-selected:focus,\n.jsoneditor-contextmenu .jsoneditor-menu li button.jsoneditor-selected:hover {\n  color: #fff;\n  background-color: #ee422e;\n}\n.jsoneditor-contextmenu .jsoneditor-menu li ul li button:focus,\n.jsoneditor-contextmenu .jsoneditor-menu li ul li button:hover {\n  background-color: #f5f5f5;\n}\n.jsoneditor-modal {\n  max-width: 95%;\n  border-radius: 2px!important;\n  padding: 45px 15px 15px 15px!important;\n  box-shadow: 2px 2px 12px rgba(128,128,128,.3);\n  color: #4d4d4d;\n  line-height: 1.3em;\n}\n.jsoneditor-modal.jsoneditor-modal-transform {\n  width: 600px!important;\n}\n.jsoneditor-modal .pico-modal-header {\n  position: absolute;\n  box-sizing: border-box;\n  top: 0;\n  left: 0;\n  width: 100%;\n  padding: 0 10px;\n  height: 30px;\n  line-height: 30px;\n  font-family: arial,sans-serif;\n  font-size: 11pt;\n  background: #3883fa;\n  color: #fff;\n}\n.jsoneditor-modal table {\n  width: 100%;\n}\n.jsoneditor-modal table td {\n  padding: 3px 0;\n}\n.jsoneditor-modal table td.jsoneditor-modal-input {\n  text-align: right;\n  padding-right: 0;\n  white-space: nowrap;\n}\n.jsoneditor-modal table td.jsoneditor-modal-actions {\n  padding-top: 15px;\n}\n.jsoneditor-modal table th {\n  vertical-align: middle;\n}\n.jsoneditor-modal p:first-child {\n  margin-top: 0;\n}\n.jsoneditor-modal a {\n  color: #3883fa;\n}\n.jsoneditor-modal .jsoneditor-jmespath-block {\n  margin-bottom: 10px;\n}\n.jsoneditor-modal .pico-close {\n  background: 0 0!important;\n  font-size: 24px!important;\n  top: 7px!important;\n  right: 7px!important;\n  color: #fff;\n}\n.jsoneditor-modal input {\n  padding: 4px;\n}\n.jsoneditor-modal input[type=text] {\n  cursor: inherit;\n}\n.jsoneditor-modal input[disabled] {\n  background: #d3d3d3;\n  color: grey;\n}\n.jsoneditor-modal .jsoneditor-select-wrapper {\n  position: relative;\n  display: inline-block;\n}\n.jsoneditor-modal .jsoneditor-select-wrapper:after {\n  content: \"\";\n  width: 0;\n  height: 0;\n  border-left: 5px solid transparent;\n  border-right: 5px solid transparent;\n  border-top: 6px solid #666;\n  position: absolute;\n  right: 8px;\n  top: 14px;\n  pointer-events: none;\n}\n.jsoneditor-modal select {\n  padding: 3px 24px 3px 10px;\n  min-width: 180px;\n  max-width: 350px;\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  appearance: none;\n  text-indent: 0;\n  text-overflow: \"\";\n  font-size: 14px;\n  line-height: 1.5em;\n}\n.jsoneditor-modal select::-ms-expand {\n  display: none;\n}\n.jsoneditor-modal .jsoneditor-button-group input {\n  padding: 4px 10px;\n  margin: 0;\n  border-radius: 0;\n  border-left-style: none;\n}\n.jsoneditor-modal .jsoneditor-button-group input.jsoneditor-button-first {\n  border-top-left-radius: 3px;\n  border-bottom-left-radius: 3px;\n  border-left-style: solid;\n}\n.jsoneditor-modal .jsoneditor-button-group input.jsoneditor-button-last {\n  border-top-right-radius: 3px;\n  border-bottom-right-radius: 3px;\n}\n.jsoneditor-modal .jsoneditor-transform-preview {\n  background: #f5f5f5;\n  height: 200px;\n}\n.jsoneditor-modal .jsoneditor-transform-preview.jsoneditor-error {\n  color: #ee422e;\n}\n.jsoneditor-modal .jsoneditor-jmespath-wizard {\n  line-height: 1.2em;\n  width: 100%;\n  padding: 0;\n  border-radius: 3px;\n}\n.jsoneditor-modal .jsoneditor-jmespath-label {\n  font-weight: 700;\n  color: #1e90ff;\n  margin-top: 20px;\n  margin-bottom: 5px;\n}\n.jsoneditor-modal .jsoneditor-jmespath-wizard-table {\n  width: 100%;\n  border-collapse: collapse;\n}\n.jsoneditor-modal .jsoneditor-jmespath-wizard-label {\n  font-style: italic;\n  margin: 4px 0 2px 0;\n}\n.jsoneditor-modal .jsoneditor-inline {\n  position: relative;\n  display: inline-block;\n  width: 100%;\n  padding-top: 2px;\n  padding-bottom: 2px;\n}\n.jsoneditor-modal .jsoneditor-inline:not(:last-child) {\n  padding-right: 2px;\n}\n.jsoneditor-modal .jsoneditor-jmespath-filter {\n  display: flex;\n  flex-wrap: wrap;\n}\n.jsoneditor-modal .jsoneditor-jmespath-filter-field {\n  width: 180px;\n}\n.jsoneditor-modal .jsoneditor-jmespath-filter-relation {\n  width: 100px;\n}\n.jsoneditor-modal .jsoneditor-jmespath-filter-value {\n  min-width: 180px;\n  flex: 1;\n}\n.jsoneditor-modal .jsoneditor-jmespath-sort-field {\n  width: 170px;\n}\n.jsoneditor-modal .jsoneditor-jmespath-sort-order {\n  width: 150px;\n}\n.jsoneditor-modal .jsoneditor-jmespath-select-fields {\n  width: 100%;\n}\n.jsoneditor-modal .selectr-selected {\n  border-color: #d3d3d3;\n  padding: 4px 28px 4px 8px;\n}\n.jsoneditor-modal .selectr-selected .selectr-tag {\n  background-color: #3883fa;\n  border-radius: 5px;\n}\n.jsoneditor-modal table td,\n.jsoneditor-modal table th {\n  text-align: left;\n  vertical-align: middle;\n  font-weight: 400;\n  color: #4d4d4d;\n  border-spacing: 0;\n  border-collapse: collapse;\n}\n.jsoneditor-modal #query,\n.jsoneditor-modal input,\n.jsoneditor-modal input[type=text],\n.jsoneditor-modal input[type=text]:focus,\n.jsoneditor-modal select,\n.jsoneditor-modal textarea {\n  background: #fff;\n  border: 1px solid #d3d3d3;\n  color: #4d4d4d;\n  border-radius: 3px;\n  padding: 4px;\n}\n.jsoneditor-modal #query,\n.jsoneditor-modal textarea {\n  border-radius: unset;\n}\n.jsoneditor-modal,\n.jsoneditor-modal #query,\n.jsoneditor-modal input,\n.jsoneditor-modal input[type=text],\n.jsoneditor-modal option,\n.jsoneditor-modal select,\n.jsoneditor-modal table td,\n.jsoneditor-modal table th,\n.jsoneditor-modal textarea {\n  font-size: 10.5pt;\n  font-family: arial,sans-serif;\n}\n.jsoneditor-modal #query,\n.jsoneditor-modal .jsoneditor-transform-preview {\n  font-family: consolas,menlo,monaco,\"Ubuntu Mono\",source-code-pro,monospace;\n  font-size: 14px;\n  width: 100%;\n  box-sizing: border-box;\n}\n.jsoneditor-modal input[type=button],\n.jsoneditor-modal input[type=submit] {\n  background: #f5f5f5;\n  padding: 4px 20px;\n}\n.jsoneditor-modal input,\n.jsoneditor-modal select {\n  cursor: pointer;\n}\n.jsoneditor-modal .jsoneditor-button-group.jsoneditor-button-group-value-asc input.jsoneditor-button-asc,\n.jsoneditor-modal .jsoneditor-button-group.jsoneditor-button-group-value-desc input.jsoneditor-button-desc {\n  background: #3883fa;\n  border-color: #3883fa;\n  color: #fff;\n}\n.jsoneditor {\n  color: #1a1a1a;\n  border: thin solid #3883fa;\n  -moz-box-sizing: border-box;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  width: 100%;\n  height: 100%;\n  position: relative;\n  padding: 0;\n  line-height: 100%;\n}\ndiv.jsoneditor-default,\ndiv.jsoneditor-field,\ndiv.jsoneditor-readonly,\ndiv.jsoneditor-value {\n  border: 1px solid transparent;\n  min-height: 16px;\n  min-width: 32px;\n  line-height: 16px;\n  padding: 2px;\n  margin: 1px;\n  word-wrap: break-word;\n  float: left;\n}\ndiv.jsoneditor-field p,\ndiv.jsoneditor-value p {\n  margin: 0;\n}\ndiv.jsoneditor-value {\n  word-break: break-word;\n}\ndiv.jsoneditor-value.jsoneditor-empty::after {\n  content: \"value\";\n}\ndiv.jsoneditor-value.jsoneditor-string {\n  color: #006000;\n}\ndiv.jsoneditor-value.jsoneditor-number {\n  color: #ee422e;\n}\ndiv.jsoneditor-value.jsoneditor-boolean {\n  color: #ff8c00;\n}\ndiv.jsoneditor-value.jsoneditor-null {\n  color: #004ed0;\n}\ndiv.jsoneditor-value.jsoneditor-color-value {\n  color: #1a1a1a;\n}\ndiv.jsoneditor-value.jsoneditor-invalid {\n  color: #1a1a1a;\n}\ndiv.jsoneditor-readonly {\n  min-width: 16px;\n  color: grey;\n}\ndiv.jsoneditor-empty {\n  border-color: #d3d3d3;\n  border-style: dashed;\n  border-radius: 2px;\n}\ndiv.jsoneditor-field.jsoneditor-empty::after {\n  content: \"field\";\n}\ndiv.jsoneditor td {\n  vertical-align: top;\n}\ndiv.jsoneditor td.jsoneditor-separator {\n  padding: 3px 0;\n  vertical-align: top;\n  color: grey;\n}\ndiv.jsoneditor td.jsoneditor-tree {\n  vertical-align: top;\n}\ndiv.jsoneditor.busy pre.jsoneditor-preview {\n  background: #f5f5f5;\n  color: grey;\n}\ndiv.jsoneditor.busy div.jsoneditor-busy {\n  display: inherit;\n}\ndiv.jsoneditor code.jsoneditor-preview {\n  background: 0 0;\n}\ndiv.jsoneditor.jsoneditor-mode-preview pre.jsoneditor-preview {\n  width: 100%;\n  height: 100%;\n  box-sizing: border-box;\n  overflow: auto;\n  padding: 2px;\n  margin: 0;\n  white-space: pre-wrap;\n  word-break: break-all;\n}\ndiv.jsoneditor-default {\n  color: grey;\n  padding-left: 10px;\n}\ndiv.jsoneditor-tree {\n  width: 100%;\n  height: 100%;\n  position: relative;\n  overflow: auto;\n  background: #fff;\n}\ndiv.jsoneditor-tree button.jsoneditor-button {\n  width: 24px;\n  height: 24px;\n  padding: 0;\n  margin: 0;\n  border: none;\n  cursor: pointer;\n  background-color: transparent;\n  background-image: url(node_modules/jsoneditor/dist/img/jsoneditor-icons.svg);\n}\ndiv.jsoneditor-tree button.jsoneditor-button:focus {\n  background-color: #f5f5f5;\n  outline: #e5e5e5 solid 1px;\n}\ndiv.jsoneditor-tree button.jsoneditor-collapsed {\n  background-position: 0 -48px;\n}\ndiv.jsoneditor-tree button.jsoneditor-expanded {\n  background-position: 0 -72px;\n}\ndiv.jsoneditor-tree button.jsoneditor-contextmenu-button {\n  background-position: -48px -72px;\n}\ndiv.jsoneditor-tree button.jsoneditor-invisible {\n  visibility: hidden;\n  background: 0 0;\n}\ndiv.jsoneditor-tree button.jsoneditor-dragarea {\n  background-image: url(node_modules/jsoneditor/dist/img/jsoneditor-icons.svg);\n  background-position: -72px -72px;\n  cursor: move;\n}\ndiv.jsoneditor-tree :focus {\n  outline: 0;\n}\ndiv.jsoneditor-tree div.jsoneditor-show-more {\n  display: inline-block;\n  padding: 3px 4px;\n  margin: 2px 0;\n  background-color: #e5e5e5;\n  border-radius: 3px;\n  color: grey;\n  font-family: arial,sans-serif;\n  font-size: 14px;\n}\ndiv.jsoneditor-tree div.jsoneditor-show-more a {\n  display: inline-block;\n  color: grey;\n}\ndiv.jsoneditor-tree div.jsoneditor-color {\n  display: inline-block;\n  width: 12px;\n  height: 12px;\n  margin: 4px;\n  border: 1px solid grey;\n  cursor: pointer;\n}\ndiv.jsoneditor-tree div.jsoneditor-color.jsoneditor-color-readonly {\n  cursor: inherit;\n}\ndiv.jsoneditor-tree div.jsoneditor-date {\n  background: #a1a1a1;\n  color: #fff;\n  font-family: arial,sans-serif;\n  border-radius: 3px;\n  display: inline-block;\n  padding: 3px;\n  margin: 0 3px;\n}\ndiv.jsoneditor-tree table.jsoneditor-tree {\n  border-collapse: collapse;\n  border-spacing: 0;\n  width: 100%;\n}\ndiv.jsoneditor-tree .jsoneditor-button {\n  display: block;\n}\ndiv.jsoneditor-tree .jsoneditor-button.jsoneditor-schema-error {\n  width: 24px;\n  height: 24px;\n  padding: 0;\n  margin: 0 4px 0 0;\n  background-image: url(node_modules/jsoneditor/dist/img/jsoneditor-icons.svg);\n  background-position: -168px -48px;\n  background-color: transparent;\n}\ndiv.jsoneditor-outer {\n  position: static;\n  width: 100%;\n  height: 100%;\n  margin: 0;\n  padding: 0;\n  -moz-box-sizing: border-box;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n}\ndiv.jsoneditor-outer.has-nav-bar {\n  margin-top: -26px;\n  padding-top: 26px;\n}\ndiv.jsoneditor-outer.has-nav-bar.has-main-menu-bar {\n  margin-top: -61px;\n  padding-top: 61px;\n}\ndiv.jsoneditor-outer.has-status-bar {\n  margin-bottom: -26px;\n  padding-bottom: 26px;\n}\ndiv.jsoneditor-outer.has-main-menu-bar {\n  margin-top: -35px;\n  padding-top: 35px;\n}\ndiv.jsoneditor-busy {\n  position: absolute;\n  top: 15%;\n  left: 0;\n  box-sizing: border-box;\n  width: 100%;\n  text-align: center;\n  display: none;\n}\ndiv.jsoneditor-busy span {\n  background-color: #ffffab;\n  border: 1px solid #fe0;\n  border-radius: 3px;\n  padding: 5px 15px;\n  box-shadow: 0 0 5px rgba(0,0,0,.4);\n}\ndiv.jsoneditor-field.jsoneditor-empty::after,\ndiv.jsoneditor-value.jsoneditor-empty::after {\n  pointer-events: none;\n  color: #d3d3d3;\n  font-size: 8pt;\n}\na.jsoneditor-value.jsoneditor-url,\ndiv.jsoneditor-value.jsoneditor-url {\n  color: #006000;\n  text-decoration: underline;\n}\na.jsoneditor-value.jsoneditor-url {\n  display: inline-block;\n  padding: 2px;\n  margin: 2px;\n}\na.jsoneditor-value.jsoneditor-url:focus,\na.jsoneditor-value.jsoneditor-url:hover {\n  color: #ee422e;\n}\ndiv.jsoneditor-field.jsoneditor-highlight,\ndiv.jsoneditor-field[contenteditable=true]:focus,\ndiv.jsoneditor-field[contenteditable=true]:hover,\ndiv.jsoneditor-value.jsoneditor-highlight,\ndiv.jsoneditor-value[contenteditable=true]:focus,\ndiv.jsoneditor-value[contenteditable=true]:hover {\n  background-color: #ffffab;\n  border: 1px solid #fe0;\n  border-radius: 2px;\n}\ndiv.jsoneditor-field.jsoneditor-highlight-active,\ndiv.jsoneditor-field.jsoneditor-highlight-active:focus,\ndiv.jsoneditor-field.jsoneditor-highlight-active:hover,\ndiv.jsoneditor-value.jsoneditor-highlight-active,\ndiv.jsoneditor-value.jsoneditor-highlight-active:focus,\ndiv.jsoneditor-value.jsoneditor-highlight-active:hover {\n  background-color: #fe0;\n  border: 1px solid #ffc700;\n  border-radius: 2px;\n}\ndiv.jsoneditor-value.jsoneditor-array,\ndiv.jsoneditor-value.jsoneditor-object {\n  min-width: 16px;\n}\ndiv.jsoneditor-tree button.jsoneditor-contextmenu-button.jsoneditor-selected,\ndiv.jsoneditor-tree button.jsoneditor-contextmenu-button:focus,\ndiv.jsoneditor-tree button.jsoneditor-contextmenu-button:hover,\ntr.jsoneditor-selected.jsoneditor-first button.jsoneditor-contextmenu-button {\n  background-position: -48px -48px;\n}\ndiv.jsoneditor-tree div.jsoneditor-show-more a:focus,\ndiv.jsoneditor-tree div.jsoneditor-show-more a:hover {\n  color: #ee422e;\n}\n.ace-jsoneditor,\ntextarea.jsoneditor-text {\n  min-height: 150px;\n}\n.ace-jsoneditor.ace_editor,\ntextarea.jsoneditor-text.ace_editor {\n  font-family: consolas,menlo,monaco,\"Ubuntu Mono\",source-code-pro,monospace;\n}\ntextarea.jsoneditor-text {\n  width: 100%;\n  height: 100%;\n  margin: 0;\n  -moz-box-sizing: border-box;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  outline-width: 0;\n  border: none;\n  background-color: #fff;\n  resize: none;\n}\ntr.jsoneditor-highlight,\ntr.jsoneditor-selected {\n  background-color: #d3d3d3;\n}\ntr.jsoneditor-selected button.jsoneditor-contextmenu-button,\ntr.jsoneditor-selected button.jsoneditor-dragarea {\n  visibility: hidden;\n}\ntr.jsoneditor-selected.jsoneditor-first button.jsoneditor-contextmenu-button,\ntr.jsoneditor-selected.jsoneditor-first button.jsoneditor-dragarea {\n  visibility: visible;\n}\ndiv.jsoneditor-tree button.jsoneditor-dragarea:focus,\ndiv.jsoneditor-tree button.jsoneditor-dragarea:hover,\ntr.jsoneditor-selected.jsoneditor-first button.jsoneditor-dragarea {\n  background-position: -72px -48px;\n}\ndiv.jsoneditor td,\ndiv.jsoneditor th,\ndiv.jsoneditor tr {\n  padding: 0;\n  margin: 0;\n}\n.jsoneditor-popover,\n.jsoneditor-schema-error,\ndiv.jsoneditor td,\ndiv.jsoneditor textarea,\ndiv.jsoneditor th,\ndiv.jsoneditor-field,\ndiv.jsoneditor-value,\npre.jsoneditor-preview {\n  font-family: consolas,menlo,monaco,\"Ubuntu Mono\",source-code-pro,monospace;\n  font-size: 14px;\n  color: #1a1a1a;\n}\n.jsoneditor-schema-error {\n  cursor: default;\n  display: inline-block;\n  height: 24px;\n  line-height: 24px;\n  position: relative;\n  text-align: center;\n  width: 24px;\n}\n.jsoneditor-popover {\n  background-color: #4c4c4c;\n  border-radius: 3px;\n  box-shadow: 0 0 5px rgba(0,0,0,.4);\n  color: #fff;\n  padding: 7px 10px;\n  position: absolute;\n  cursor: auto;\n  width: 200px;\n}\n.jsoneditor-popover.jsoneditor-above {\n  bottom: 32px;\n  left: -98px;\n}\n.jsoneditor-popover.jsoneditor-above:before {\n  border-top: 7px solid #4c4c4c;\n  bottom: -7px;\n}\n.jsoneditor-popover.jsoneditor-below {\n  top: 32px;\n  left: -98px;\n}\n.jsoneditor-popover.jsoneditor-below:before {\n  border-bottom: 7px solid #4c4c4c;\n  top: -7px;\n}\n.jsoneditor-popover.jsoneditor-left {\n  top: -7px;\n  right: 32px;\n}\n.jsoneditor-popover.jsoneditor-left:before {\n  border-left: 7px solid #4c4c4c;\n  border-top: 7px solid transparent;\n  border-bottom: 7px solid transparent;\n  content: \"\";\n  top: 19px;\n  right: -14px;\n  left: inherit;\n  margin-left: inherit;\n  margin-top: -7px;\n  position: absolute;\n}\n.jsoneditor-popover.jsoneditor-right {\n  top: -7px;\n  left: 32px;\n}\n.jsoneditor-popover.jsoneditor-right:before {\n  border-right: 7px solid #4c4c4c;\n  border-top: 7px solid transparent;\n  border-bottom: 7px solid transparent;\n  content: \"\";\n  top: 19px;\n  left: -14px;\n  margin-left: inherit;\n  margin-top: -7px;\n  position: absolute;\n}\n.jsoneditor-popover:before {\n  border-right: 7px solid transparent;\n  border-left: 7px solid transparent;\n  content: \"\";\n  display: block;\n  left: 50%;\n  margin-left: -7px;\n  position: absolute;\n}\n.jsoneditor-text-errors tr.jump-to-line:hover {\n  text-decoration: underline;\n  cursor: pointer;\n}\n.jsoneditor-schema-error:focus .jsoneditor-popover,\n.jsoneditor-schema-error:hover .jsoneditor-popover {\n  display: block;\n  animation: fade-in .3s linear 1,move-up .3s linear 1;\n}\n@keyframes fade-in {\n  from {\n    opacity: 0;\n  }\n\n  to {\n    opacity: 1;\n  }\n}\n.jsoneditor .jsoneditor-validation-errors-container {\n  max-height: 130px;\n  overflow-y: auto;\n}\n.jsoneditor .jsoneditor-validation-errors {\n  width: 100%;\n  overflow: hidden;\n}\n.jsoneditor .jsoneditor-additional-errors {\n  position: absolute;\n  margin: auto;\n  bottom: 31px;\n  left: calc(50% - 92px);\n  color: grey;\n  background-color: #ebebeb;\n  padding: 7px 15px;\n  border-radius: 8px;\n}\n.jsoneditor .jsoneditor-additional-errors.visible {\n  visibility: visible;\n  opacity: 1;\n  transition: opacity 2s linear;\n}\n.jsoneditor .jsoneditor-additional-errors.hidden {\n  visibility: hidden;\n  opacity: 0;\n  transition: visibility 0s 2s,opacity 2s linear;\n}\n.jsoneditor .jsoneditor-text-errors {\n  width: 100%;\n  border-collapse: collapse;\n  border-top: 1px solid #ffc700;\n}\n.jsoneditor .jsoneditor-text-errors td {\n  padding: 3px 6px;\n  vertical-align: middle;\n}\n.jsoneditor .jsoneditor-text-errors td pre {\n  margin: 0;\n  white-space: pre-wrap;\n}\n.jsoneditor .jsoneditor-text-errors tr {\n  background-color: #ffffab;\n}\n.jsoneditor .jsoneditor-text-errors tr.parse-error {\n  background-color: rgba(238,46,46,.4392156863);\n}\n.jsoneditor-text-errors .jsoneditor-schema-error {\n  border: none;\n  width: 24px;\n  height: 24px;\n  padding: 0;\n  margin: 0 4px 0 0;\n  cursor: pointer;\n}\n.jsoneditor-text-errors tr .jsoneditor-schema-error {\n  background-image: url(node_modules/jsoneditor/dist/img/jsoneditor-icons.svg);\n  background-position: -168px -48px;\n  background-color: transparent;\n}\n.jsoneditor-text-errors tr.parse-error .jsoneditor-schema-error {\n  background-image: url(node_modules/jsoneditor/dist/img/jsoneditor-icons.svg);\n  background-position: -25px 0;\n  background-color: transparent;\n}\n.jsoneditor-anchor {\n  cursor: pointer;\n}\n.jsoneditor-anchor .picker_wrapper.popup.popup_bottom {\n  top: 28px;\n  left: -10px;\n}\n.fadein {\n  -webkit-animation: fadein .3s;\n  animation: fadein .3s;\n  -moz-animation: fadein .3s;\n  -o-animation: fadein .3s;\n}\n@keyframes fadein {\n  0% {\n    opacity: 0;\n  }\n\n  100% {\n    opacity: 1;\n  }\n}\n.jsoneditor-modal input[type=search].selectr-input {\n  border: 1px solid #d3d3d3;\n  width: calc(100% - 4px);\n  margin: 2px;\n  padding: 4px;\n  box-sizing: border-box;\n}\n.jsoneditor-modal button.selectr-input-clear {\n  right: 8px;\n}\n.jsoneditor-menu {\n  width: 100%;\n  height: 35px;\n  padding: 2px;\n  margin: 0;\n  -moz-box-sizing: border-box;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  color: #fff;\n  background-color: #3883fa;\n  border-bottom: 1px solid #3883fa;\n}\n.jsoneditor-menu>.jsoneditor-modes>button,\n.jsoneditor-menu>button {\n  width: 26px;\n  height: 26px;\n  margin: 2px;\n  padding: 0;\n  border-radius: 2px;\n  border: 1px solid transparent;\n  background-color: transparent;\n  background-image: url(node_modules/jsoneditor/dist/img/jsoneditor-icons.svg);\n  color: #fff;\n  opacity: .8;\n  font-family: arial,sans-serif;\n  font-size: 14px;\n  float: left;\n}\n.jsoneditor-menu>.jsoneditor-modes>button:hover,\n.jsoneditor-menu>button:hover {\n  background-color: rgba(255,255,255,.2);\n  border: 1px solid rgba(255,255,255,.4);\n}\n.jsoneditor-menu>.jsoneditor-modes>button:active,\n.jsoneditor-menu>.jsoneditor-modes>button:focus,\n.jsoneditor-menu>button:active,\n.jsoneditor-menu>button:focus {\n  background-color: rgba(255,255,255,.3);\n}\n.jsoneditor-menu>.jsoneditor-modes>button:disabled,\n.jsoneditor-menu>button:disabled {\n  opacity: .5;\n  background-color: transparent;\n  border: none;\n}\n.jsoneditor-menu>button.jsoneditor-collapse-all {\n  background-position: 0 -96px;\n}\n.jsoneditor-menu>button.jsoneditor-expand-all {\n  background-position: 0 -120px;\n}\n.jsoneditor-menu>button.jsoneditor-sort {\n  background-position: -120px -96px;\n}\n.jsoneditor-menu>button.jsoneditor-transform {\n  background-position: -144px -96px;\n}\n.jsoneditor.jsoneditor-mode-form>.jsoneditor-menu>button.jsoneditor-sort,\n.jsoneditor.jsoneditor-mode-form>.jsoneditor-menu>button.jsoneditor-transform,\n.jsoneditor.jsoneditor-mode-view>.jsoneditor-menu>button.jsoneditor-sort,\n.jsoneditor.jsoneditor-mode-view>.jsoneditor-menu>button.jsoneditor-transform {\n  display: none;\n}\n.jsoneditor-menu>button.jsoneditor-undo {\n  background-position: -24px -96px;\n}\n.jsoneditor-menu>button.jsoneditor-undo:disabled {\n  background-position: -24px -120px;\n}\n.jsoneditor-menu>button.jsoneditor-redo {\n  background-position: -48px -96px;\n}\n.jsoneditor-menu>button.jsoneditor-redo:disabled {\n  background-position: -48px -120px;\n}\n.jsoneditor-menu>button.jsoneditor-compact {\n  background-position: -72px -96px;\n}\n.jsoneditor-menu>button.jsoneditor-format {\n  background-position: -72px -120px;\n}\n.jsoneditor-menu>button.jsoneditor-repair {\n  background-position: -96px -96px;\n}\n.jsoneditor-menu>.jsoneditor-modes {\n  display: inline-block;\n  float: left;\n}\n.jsoneditor-menu>.jsoneditor-modes>button {\n  background-image: none;\n  width: auto;\n  padding-left: 6px;\n  padding-right: 6px;\n}\n.jsoneditor-menu>.jsoneditor-modes>button.jsoneditor-separator,\n.jsoneditor-menu>button.jsoneditor-separator {\n  margin-left: 10px;\n}\n.jsoneditor-menu a {\n  font-family: arial,sans-serif;\n  font-size: 14px;\n  color: #fff;\n  opacity: .8;\n  vertical-align: middle;\n}\n.jsoneditor-menu a:hover {\n  opacity: 1;\n}\n.jsoneditor-menu a.jsoneditor-poweredBy {\n  font-size: 8pt;\n  position: absolute;\n  right: 0;\n  top: 0;\n  padding: 10px;\n}\n.jsoneditor-navigation-bar {\n  width: 100%;\n  height: 26px;\n  line-height: 26px;\n  padding: 0;\n  margin: 0;\n  border-bottom: 1px solid #d3d3d3;\n  -moz-box-sizing: border-box;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  color: grey;\n  background-color: #ebebeb;\n  overflow: hidden;\n  font-family: arial,sans-serif;\n  font-size: 14px;\n}\n.jsoneditor-search {\n  font-family: arial,sans-serif;\n  position: absolute;\n  right: 4px;\n  top: 4px;\n  border-collapse: collapse;\n  border-spacing: 0;\n  display: flex;\n}\n.jsoneditor-search input {\n  color: #1a1a1a;\n  width: 120px;\n  border: none;\n  outline: 0;\n  margin: 1px;\n  line-height: 20px;\n  font-family: arial,sans-serif;\n}\n.jsoneditor-search button {\n  width: 16px;\n  height: 24px;\n  padding: 0;\n  margin: 0;\n  border: none;\n  background: url(node_modules/jsoneditor/dist/img/jsoneditor-icons.svg);\n  vertical-align: top;\n}\n.jsoneditor-search button:hover {\n  background-color: transparent;\n}\n.jsoneditor-search button.jsoneditor-refresh {\n  width: 18px;\n  background-position: -99px -73px;\n}\n.jsoneditor-search button.jsoneditor-next {\n  cursor: pointer;\n  background-position: -124px -73px;\n}\n.jsoneditor-search button.jsoneditor-next:hover {\n  background-position: -124px -49px;\n}\n.jsoneditor-search button.jsoneditor-previous {\n  cursor: pointer;\n  background-position: -148px -73px;\n  margin-right: 2px;\n}\n.jsoneditor-search button.jsoneditor-previous:hover {\n  background-position: -148px -49px;\n}\n.jsoneditor-results {\n  font-family: arial,sans-serif;\n  color: #fff;\n  padding-right: 5px;\n  line-height: 26px;\n}\n.jsoneditor-frame {\n  border: 1px solid transparent;\n  background-color: #fff;\n  padding: 0 2px;\n  margin: 0;\n}\n.jsoneditor-statusbar {\n  line-height: 26px;\n  height: 26px;\n  color: grey;\n  background-color: #ebebeb;\n  border-top: 1px solid #d3d3d3;\n  -moz-box-sizing: border-box;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n  font-size: 14px;\n}\n.jsoneditor-statusbar>.jsoneditor-curserinfo-val {\n  margin-right: 12px;\n}\n.jsoneditor-statusbar>.jsoneditor-curserinfo-count {\n  margin-left: 4px;\n}\n.jsoneditor-statusbar>.jsoneditor-validation-error-icon {\n  float: right;\n  width: 24px;\n  height: 24px;\n  padding: 0;\n  margin-top: 1px;\n  background-image: url(node_modules/jsoneditor/dist/img/jsoneditor-icons.svg);\n  background-position: -168px -48px;\n  cursor: pointer;\n}\n.jsoneditor-statusbar>.jsoneditor-validation-error-count {\n  float: right;\n  margin: 0 4px 0 0;\n  cursor: pointer;\n}\n.jsoneditor-statusbar>.jsoneditor-parse-error-icon {\n  float: right;\n  width: 24px;\n  height: 24px;\n  padding: 0;\n  margin: 1px;\n  background-image: url(node_modules/jsoneditor/dist/img/jsoneditor-icons.svg);\n  background-position: -25px 0;\n}\n.jsoneditor-statusbar .jsoneditor-array-info a {\n  color: inherit;\n}\ndiv.jsoneditor-statusbar>.jsoneditor-curserinfo-label,\ndiv.jsoneditor-statusbar>.jsoneditor-size-info {\n  margin: 0 4px;\n}\n.jsoneditor-treepath {\n  padding: 0 5px;\n  overflow: hidden;\n  white-space: nowrap;\n  outline: 0;\n}\n.jsoneditor-treepath.show-all {\n  word-wrap: break-word;\n  white-space: normal;\n  position: absolute;\n  background-color: #ebebeb;\n  z-index: 1;\n  box-shadow: 2px 2px 12px rgba(128,128,128,.3);\n}\n.jsoneditor-treepath.show-all span.jsoneditor-treepath-show-all-btn {\n  display: none;\n}\n.jsoneditor-treepath div.jsoneditor-contextmenu-root {\n  position: absolute;\n  left: 0;\n}\n.jsoneditor-treepath .jsoneditor-treepath-show-all-btn {\n  position: absolute;\n  background-color: #ebebeb;\n  left: 0;\n  height: 20px;\n  padding: 0 3px;\n  cursor: pointer;\n}\n.jsoneditor-treepath .jsoneditor-treepath-element {\n  margin: 1px;\n  font-family: arial,sans-serif;\n  font-size: 14px;\n}\n.jsoneditor-treepath .jsoneditor-treepath-seperator {\n  margin: 2px;\n  font-size: 9pt;\n  font-family: arial,sans-serif;\n}\n.jsoneditor-treepath span.jsoneditor-treepath-element:hover,\n.jsoneditor-treepath span.jsoneditor-treepath-seperator:hover {\n  cursor: pointer;\n  text-decoration: underline;\n}\n/*!\n * Selectr 2.4.0\n * https://github.com/Mobius1/Selectr\n *\n * Released under the MIT license\n */\n.selectr-container {\n  position: relative;\n}\n.selectr-container li {\n  list-style: none;\n}\n.selectr-hidden {\n  position: absolute;\n  overflow: hidden;\n  clip: rect(0,0,0,0);\n  width: 1px;\n  height: 1px;\n  margin: -1px;\n  padding: 0;\n  border: 0 none;\n}\n.selectr-visible {\n  position: absolute;\n  left: 0;\n  top: 0;\n  width: 100%;\n  height: 100%;\n  opacity: 0;\n  z-index: 11;\n}\n.selectr-desktop.multiple .selectr-visible {\n  display: none;\n}\n.selectr-desktop.multiple.native-open .selectr-visible {\n  top: 100%;\n  min-height: 200px!important;\n  height: auto;\n  opacity: 1;\n  display: block;\n}\n.selectr-container.multiple.selectr-mobile .selectr-selected {\n  z-index: 0;\n}\n.selectr-selected {\n  position: relative;\n  z-index: 1;\n  box-sizing: border-box;\n  width: 100%;\n  padding: 7px 28px 7px 14px;\n  cursor: pointer;\n  border: 1px solid #999;\n  border-radius: 3px;\n  background-color: #fff;\n}\n.selectr-selected::before {\n  position: absolute;\n  top: 50%;\n  right: 10px;\n  width: 0;\n  height: 0;\n  content: \"\";\n  -o-transform: rotate(0) translate3d(0,-50%,0);\n  -ms-transform: rotate(0) translate3d(0,-50%,0);\n  -moz-transform: rotate(0) translate3d(0,-50%,0);\n  -webkit-transform: rotate(0) translate3d(0,-50%,0);\n  transform: rotate(0) translate3d(0,-50%,0);\n  border-width: 4px 4px 0 4px;\n  border-style: solid;\n  border-color: #6c7a86 transparent transparent;\n}\n.selectr-container.native-open .selectr-selected::before,\n.selectr-container.open .selectr-selected::before {\n  border-width: 0 4px 4px 4px;\n  border-style: solid;\n  border-color: transparent transparent #6c7a86;\n}\n.selectr-label {\n  display: none;\n  overflow: hidden;\n  width: 100%;\n  white-space: nowrap;\n  text-overflow: ellipsis;\n}\n.selectr-placeholder {\n  color: #6c7a86;\n}\n.selectr-tags {\n  margin: 0;\n  padding: 0;\n  white-space: normal;\n}\n.has-selected .selectr-tags {\n  margin: 0 0 -2px;\n}\n.selectr-tag {\n  list-style: none;\n  position: relative;\n  float: left;\n  padding: 2px 25px 2px 8px;\n  margin: 0 2px 2px 0;\n  cursor: default;\n  color: #fff;\n  border: medium none;\n  border-radius: 10px;\n  background: #acb7bf none repeat scroll 0 0;\n}\n.selectr-container.multiple.has-selected .selectr-selected {\n  padding: 5px 28px 5px 5px;\n}\n.selectr-options-container {\n  position: absolute;\n  z-index: 10000;\n  top: calc(100% - 1px);\n  left: 0;\n  display: none;\n  box-sizing: border-box;\n  width: 100%;\n  border-width: 0 1px 1px;\n  border-style: solid;\n  border-color: transparent #999 #999;\n  border-radius: 0 0 3px 3px;\n  background-color: #fff;\n}\n.selectr-container.open .selectr-options-container {\n  display: block;\n}\n.selectr-input-container {\n  position: relative;\n  display: none;\n}\n.selectr-clear,\n.selectr-input-clear,\n.selectr-tag-remove {\n  position: absolute;\n  top: 50%;\n  right: 22px;\n  width: 20px;\n  height: 20px;\n  padding: 0;\n  cursor: pointer;\n  -o-transform: translate3d(0,-50%,0);\n  -ms-transform: translate3d(0,-50%,0);\n  -moz-transform: translate3d(0,-50%,0);\n  -webkit-transform: translate3d(0,-50%,0);\n  transform: translate3d(0,-50%,0);\n  border: medium none;\n  background-color: transparent;\n  z-index: 11;\n}\n.selectr-clear,\n.selectr-input-clear {\n  display: none;\n}\n.selectr-container.has-selected .selectr-clear,\n.selectr-input-container.active .selectr-input-clear {\n  display: block;\n}\n.selectr-selected .selectr-tag-remove {\n  right: 2px;\n}\n.selectr-clear::after,\n.selectr-clear::before,\n.selectr-input-clear::after,\n.selectr-input-clear::before,\n.selectr-tag-remove::after,\n.selectr-tag-remove::before {\n  position: absolute;\n  top: 5px;\n  left: 9px;\n  width: 2px;\n  height: 10px;\n  content: \" \";\n  background-color: #6c7a86;\n}\n.selectr-tag-remove::after,\n.selectr-tag-remove::before {\n  top: 4px;\n  width: 3px;\n  height: 12px;\n  background-color: #fff;\n}\n.selectr-clear:before,\n.selectr-input-clear::before,\n.selectr-tag-remove::before {\n  -o-transform: rotate(45deg);\n  -ms-transform: rotate(45deg);\n  -moz-transform: rotate(45deg);\n  -webkit-transform: rotate(45deg);\n  transform: rotate(45deg);\n}\n.selectr-clear:after,\n.selectr-input-clear::after,\n.selectr-tag-remove::after {\n  -o-transform: rotate(-45deg);\n  -ms-transform: rotate(-45deg);\n  -moz-transform: rotate(-45deg);\n  -webkit-transform: rotate(-45deg);\n  transform: rotate(-45deg);\n}\n.selectr-input-container.active,\n.selectr-input-container.active .selectr-clear {\n  display: block;\n}\n.selectr-input {\n  top: 5px;\n  left: 5px;\n  box-sizing: border-box;\n  width: calc(100% - 30px);\n  margin: 10px 15px;\n  padding: 7px 30px 7px 9px;\n  border: 1px solid #999;\n  border-radius: 3px;\n}\n.selectr-notice {\n  display: none;\n  box-sizing: border-box;\n  width: 100%;\n  padding: 8px 16px;\n  border-top: 1px solid #999;\n  border-radius: 0 0 3px 3px;\n  background-color: #fff;\n}\n.selectr-container.notice .selectr-notice {\n  display: block;\n}\n.selectr-container.notice .selectr-selected {\n  border-radius: 3px 3px 0 0;\n}\n.selectr-options {\n  position: relative;\n  top: calc(100% + 2px);\n  display: none;\n  overflow-x: auto;\n  overflow-y: scroll;\n  max-height: 200px;\n  margin: 0;\n  padding: 0;\n}\n.selectr-container.notice .selectr-options-container,\n.selectr-container.open .selectr-input-container,\n.selectr-container.open .selectr-options {\n  display: block;\n}\n.selectr-option {\n  position: relative;\n  display: block;\n  padding: 5px 20px;\n  list-style: outside none none;\n  cursor: pointer;\n  font-weight: 400;\n}\n.selectr-options.optgroups>.selectr-option {\n  padding-left: 25px;\n}\n.selectr-optgroup {\n  font-weight: 700;\n  padding: 0;\n}\n.selectr-optgroup--label {\n  font-weight: 700;\n  margin-top: 10px;\n  padding: 5px 15px;\n}\n.selectr-match {\n  text-decoration: underline;\n}\n.selectr-option.selected {\n  background-color: #ddd;\n}\n.selectr-option.active {\n  color: #fff;\n  background-color: #5897fb;\n}\n.selectr-option.disabled {\n  opacity: .4;\n}\n.selectr-option.excluded {\n  display: none;\n}\n.selectr-container.open .selectr-selected {\n  border-color: #999 #999 transparent #999;\n  border-radius: 3px 3px 0 0;\n}\n.selectr-container.open .selectr-selected::after {\n  -o-transform: rotate(180deg) translate3d(0,50%,0);\n  -ms-transform: rotate(180deg) translate3d(0,50%,0);\n  -moz-transform: rotate(180deg) translate3d(0,50%,0);\n  -webkit-transform: rotate(180deg) translate3d(0,50%,0);\n  transform: rotate(180deg) translate3d(0,50%,0);\n}\n.selectr-disabled {\n  opacity: .6;\n}\n.has-selected .selectr-placeholder,\n.selectr-empty {\n  display: none;\n}\n.has-selected .selectr-label {\n  display: block;\n}\n.taggable .selectr-selected {\n  padding: 4px 28px 4px 4px;\n}\n.taggable .selectr-selected::after {\n  display: table;\n  content: \" \";\n  clear: both;\n}\n.taggable .selectr-label {\n  width: auto;\n}\n.taggable .selectr-tags {\n  float: left;\n  display: block;\n}\n.taggable .selectr-placeholder {\n  display: none;\n}\n.input-tag {\n  float: left;\n  min-width: 90px;\n  width: auto;\n}\n.selectr-tag-input {\n  border: medium none;\n  padding: 3px 10px;\n  width: 100%;\n  font-family: inherit;\n  font-weight: inherit;\n  font-size: inherit;\n}\n.selectr-input-container.loading::after {\n  position: absolute;\n  top: 50%;\n  right: 20px;\n  width: 20px;\n  height: 20px;\n  content: \"\";\n  -o-transform: translate3d(0,-50%,0);\n  -ms-transform: translate3d(0,-50%,0);\n  -moz-transform: translate3d(0,-50%,0);\n  -webkit-transform: translate3d(0,-50%,0);\n  transform: translate3d(0,-50%,0);\n  -o-transform-origin: 50% 0 0;\n  -ms-transform-origin: 50% 0 0;\n  -moz-transform-origin: 50% 0 0;\n  -webkit-transform-origin: 50% 0 0;\n  transform-origin: 50% 0 0;\n  -moz-animation: .5s linear 0s normal forwards infinite running selectr-spin;\n  -webkit-animation: .5s linear 0s normal forwards infinite running selectr-spin;\n  animation: .5s linear 0s normal forwards infinite running selectr-spin;\n  border-width: 3px;\n  border-style: solid;\n  border-color: #aaa #ddd #ddd;\n  border-radius: 50%;\n}\n@-webkit-keyframes selectr-spin {\n  0% {\n    -webkit-transform: rotate(0) translate3d(0,-50%,0);\n    transform: rotate(0) translate3d(0,-50%,0);\n  }\n\n  100% {\n    -webkit-transform: rotate(360deg) translate3d(0,-50%,0);\n    transform: rotate(360deg) translate3d(0,-50%,0);\n  }\n}\n@keyframes selectr-spin {\n  0% {\n    -webkit-transform: rotate(0) translate3d(0,-50%,0);\n    transform: rotate(0) translate3d(0,-50%,0);\n  }\n\n  100% {\n    -webkit-transform: rotate(360deg) translate3d(0,-50%,0);\n    transform: rotate(360deg) translate3d(0,-50%,0);\n  }\n}\n.selectr-container.open.inverted .selectr-selected {\n  border-color: transparent #999 #999;\n  border-radius: 0 0 3px 3px;\n}\n.selectr-container.inverted .selectr-options-container {\n  border-width: 1px 1px 0;\n  border-color: #999 #999 transparent;\n  border-radius: 3px 3px 0 0;\n  background-color: #fff;\n}\n.selectr-container.inverted .selectr-options-container {\n  top: auto;\n  bottom: calc(100% - 1px);\n}\n.selectr-container ::-webkit-input-placeholder {\n  color: #6c7a86;\n  opacity: 1;\n}\n.selectr-container ::-moz-placeholder {\n  color: #6c7a86;\n  opacity: 1;\n}\n.selectr-container :-ms-input-placeholder {\n  color: #6c7a86;\n  opacity: 1;\n}\n.selectr-container ::placeholder {\n  color: #6c7a86;\n  opacity: 1;\n}\nul li {\n  display: inline;\n}\nul {\n  padding: 0;\n  margin: 0.5em;\n}\n.btnStack {\n  margin: 0 4px;\n  background-color: #3883fa;\n  color: #b7d2fd;\n  text-decoration: none;\n  padding: 6px 12px;\n  border-radius: 4px;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  -o-user-select: none;\n  user-select: none;\n}\na.btnStack:hover {\n  background-color: #999;\n  color: #fff;\n}\n.block {\n  height: 100%;\n  position: fixed;\n  z-index: 1;\n  top: 0;\n  overflow-x: hidden;\n}\n.left {\n  left: 0;\n  width: 25%;\n}\n.right {\n  right: 0;\n  width: 75%;\n}\n#cy {\n  width: 100%;\n  height: 65%;\n  position: absolute;\n}\n#jsonViewer {\n  position: fixed;\n  right: 0;\n  bottom: 0;\n  height: 35%;\n  width: 70%;\n}\ncode {\n  background: #f5f5f5;\n}\n"; (require("browserify-css").createStyle(css, { "href": "src/app.css" }, { "insertAt": "bottom" })); module.exports = css;
-},{"browserify-css":2}],80:[function(require,module,exports){
+},{"browserify-css":1}],79:[function(require,module,exports){
 require('./app.css');
-const defaultJson = require('../data/trace.json');
-
-const JSONEditor = require('jsoneditor');
 const {Graph} = require("./graph");
+const {fetchData} = require("./data");
+const {initJsonEditor, updateJsonEditor} = require("./editor");
 
 const demos = [/*'box', 'disco',*/ 'force', 'layered', 'mrtree'/*, 'random', 'stress'*/];
 
-function populateDemosList() {
-    const el = document.getElementById('demos');
-    demos.forEach((demo) => {
-        const li = document.createElement('li');
-        const a = Object.assign(document.createElement('a'), {
-            href: `?demo=${demo}`,
-            innerText: demo,
+function createDemoLink(demo) {
+    const li = document.createElement('li');
+    const a = Object.assign(document.createElement('a'), {
+        innerText: demo,
+        classList: ['btnStack'],
+        id: demo
+    });
+    li.appendChild(a);
+    return li;
+}
+
+function updateUrlWithQueryParam(demo) {
+    const currentUrl = location.href;
+    const params = new URLSearchParams(window.location.search);
+    params.set('demo', demo);
+    window.location.href = `${currentUrl.split('?')[0]}?${params.toString()}`;
+}
+
+function initializeDemoLinks() {
+    const demosElement = document.getElementById('demos');
+    demos.forEach(demo => {
+        const demoLink = createDemoLink(demo);
+        demosElement.appendChild(demoLink);
+
+        document.getElementById(demo).addEventListener('click', () => {
+            updateUrlWithQueryParam(demo);
         });
-        a.classList.add('btnStack');
-        li.appendChild(a);
-        el.appendChild(li);
     });
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-    populateDemosList();
-    let graph = new Graph(document.getElementById('cy'), defaultJson);
-    initJsonEditor((json) => graph.updateJson(json));
-    const demoMatch = /demo=([a-z]+)/.exec(location.search);
+async function handlePopState(event, graph) {
+    console.log('URL changed:', window.location.href);
+    const params = new URLSearchParams(window.location.search);
+    const jsonValue = await fetchData(params.get('data'));
+    if (graph && jsonValue) {
+        setIsFirstTimeLoaded(true);
+        graph.updateJson(jsonValue);
+        updateJsonEditor(jsonValue);
+    }
+}
+
+document.addEventListener('DOMContentLoaded', async function () {
+    initializeDemoLinks();
+
+    const params = new URLSearchParams(window.location.search);
+
+    const dataValue = params.get('data');
+    if (!dataValue) {
+        params.set('data', 'https://raw.githubusercontent.com/tabkram/json-to-graph/main/data/trace.json');
+        window.location.href = `${location.href.split('?')[0]}?${params.toString()}`;
+    }
+
+    const jsonValue = await fetchData(dataValue);
+    const graph = await updateEditorAndGraph(jsonValue);
+
+    window.addEventListener('popstate', async function (event) {
+        handlePopState(event, graph);
+    });
+
+    const demoMatch = params.get('demo');
     if (demoMatch) {
         graph.updateLayout({
             nodeDimensionsIncludeLabels: true,
             elk: {
-                algorithm: demoMatch[1],
+                algorithm: demoMatch,
                 'elk.spacing.edgeEdge': 20,
                 'elk.spacing.edgeNode': 20,
                 'elk.spacing.nodeNode': 20,
@@ -38375,23 +38214,86 @@ document.addEventListener('DOMContentLoaded', function () {
             padding: 100
         });
     }
+
     document.getElementById("downloadpng").onclick = () => {
         graph.download();
     };
 });
 
-function initJsonEditor(onValidate) {
+let isFirstTimeLoaded = true;
+
+function setIsFirstTimeLoaded(value) {
+    isFirstTimeLoaded = value;
+}
+
+async function updateEditorAndGraph(jsonValue) {
+    const graph = new Graph(document.getElementById('cy'), jsonValue);
+    initJsonEditor(jsonValue, (newJsonValue) => {
+        graph.updateJson(newJsonValue)
+        if (isFirstTimeLoaded) {
+            isFirstTimeLoaded = false;
+        } else {
+            const params = new URLSearchParams(window.location.search);
+            if (params.get('data')) {
+                params.delete('data');
+                history.pushState(null, null, `${location.href.split('?')[0]}?${params.toString()}`);
+            }
+        }
+    });
+    return graph;
+}
+
+},{"./app.css":78,"./data":80,"./editor":81,"./graph":82}],80:[function(require,module,exports){
+async function fetchData(url) {
+    try {
+        // Use the 'await' keyword to wait for the fetch to complete
+        const response = await fetch(url);
+
+        // Check if the request was successful (status code 200)
+        if (!response.ok) {
+            throw new Error(`Network response was not ok, status: ${response.status}`);
+        }
+
+        // Use 'await' again to parse the JSON data from the response
+        const data = await response.json();
+
+        // Now you can use the 'data' variable as needed
+        console.log(data);
+
+        return data; // if you want to return the data from the function
+    } catch (error) {
+        // Handle any errors that occurred during the fetch
+        console.error('Fetch error:', error);
+        throw error; // if you want to propagate the error further
+    }
+}
+
+module.exports.fetchData = fetchData;
+},{}],81:[function(require,module,exports){
+const JSONEditor = require('jsoneditor');
+
+let editor = null;
+
+function initJsonEditor(jsonValue, onValidate) {
     const container = document.getElementById("jsoneditor")
     const options = {
         mode: "code",
         modes: ["code", "text", "tree", "preview"],
         onValidate: onValidate
     }
-    const editor = new JSONEditor(container, options)
-    editor.set(defaultJson);
+    editor = new JSONEditor(container, options)
+    updateJsonEditor(jsonValue);
 }
 
-},{"../data/trace.json":1,"./app.css":79,"./graph":81,"jsoneditor":10}],81:[function(require,module,exports){
+function updateJsonEditor(jsonValue) {
+    editor.set(jsonValue);
+}
+
+module.exports = {
+    initJsonEditor,
+    updateJsonEditor
+};
+},{"jsoneditor":9}],82:[function(require,module,exports){
 require('web-worker');
 require('elkjs');
 const elk = require('cytoscape-elk');
@@ -38482,7 +38384,7 @@ class Graph {
     }
 
     updateLayout(newLayout) {
-        this.layout = newLayout? {...this.layout, ...newLayout} : this.layout;
+        this.layout = newLayout ? {...this.layout, ...newLayout} : this.layout;
         this.cy.layout({...this.layout, ...newLayout}).run();
     }
 
@@ -38498,7 +38400,7 @@ class Graph {
         // a.href = URL.createObjectURL(file);
         // a.download = "test.png";
         // document.getElementById(elementId);
-        const image  = document.querySelector('canvas[data-id="layer2-node"]').toDataURL();
+        const image = document.querySelector('canvas[data-id="layer2-node"]').toDataURL();
         const a = document.createElement('a');
         a.href = image;
         a.download = `trace_${new Date()}.png`;
@@ -38508,4 +38410,4 @@ class Graph {
 
 module.exports.Graph = Graph;
 
-},{"cytoscape":4,"cytoscape-elk":3,"elkjs":7,"jsoneditor":10,"web-worker":78}]},{},[80]);
+},{"cytoscape":3,"cytoscape-elk":2,"elkjs":6,"jsoneditor":9,"web-worker":77}]},{},[79]);

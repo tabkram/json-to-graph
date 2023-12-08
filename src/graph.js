@@ -88,7 +88,7 @@ class Graph {
     }
 
     updateLayout(newLayout) {
-        this.layout = newLayout? {...this.layout, ...newLayout} : this.layout;
+        this.layout = newLayout ? {...this.layout, ...newLayout} : this.layout;
         this.cy.layout({...this.layout, ...newLayout}).run();
     }
 
@@ -104,7 +104,7 @@ class Graph {
         // a.href = URL.createObjectURL(file);
         // a.download = "test.png";
         // document.getElementById(elementId);
-        const image  = document.querySelector('canvas[data-id="layer2-node"]').toDataURL();
+        const image = document.querySelector('canvas[data-id="layer2-node"]').toDataURL();
         const a = document.createElement('a');
         a.href = image;
         a.download = `trace_${new Date()}.png`;
