@@ -1,31 +1,36 @@
 {
   "name": "json-to-graph",
-  "version": "1.1.0",
-  "description": "Simplify your graph rendering with this online tool! Just feed it JSON objects and watch the magic happen",
-  "main": "index.js",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "build": "browserify -t browserify-css src/app.js -o docs/app.bundle.js"
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/tabkram/json-to-graph.git"
-  },
-  "keywords": [
-    "json",
-    "graph",
-    "visualization"
-  ],
-  "author": "Akram TABKA",
-  "license": "ISC",
   "dependencies": {
-    "browserify": "^17.0.0",
+    "core-js": "^3.8.3",
     "cytoscape": "^3.27.0",
+    "element-plus": "^2.4.4",
     "cytoscape-elk": "^2.2.0",
     "elkjs": "^0.8.2",
-    "jsoneditor": "^9.8.0",
-    "web-worker": "^1.2.0"
+    "json-editor-vue": "^0.11.2",
+    "vue": "^3.2.13",
+    "vue-class-component": "^8.0.0-0"
   },
   "devDependencies": {
-    "browserify-css": "^0.15.0"
+    "@types/cytoscape": "^3.19.16",
+    "@typescript-eslint/eslint-plugin": "^5.4.0",
+    "@typescript-eslint/parser": "^5.4.0",
+    "@vue/cli-plugin-babel": "~5.0.0",
+    "@vue/cli-plugin-eslint": "~5.0.0",
+    "@vue/cli-plugin-typescript": "~5.0.0",
+    "@vue/cli-service": "~5.0.0",
+    "@vue/eslint-config-typescript": "^9.1.0",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-vue": "^8.0.3",
+    "prettier": "^2.4.1",
+    "typescript": "~4.5.5"
   }
 }
